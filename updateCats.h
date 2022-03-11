@@ -11,8 +11,8 @@
 int updateCatName(const int index, const char newName[]);
 int fixCat(const int index);
 int updateCatWeight(const int index, const float newWeight);
-int updateCatCollar1(const int index, const int newColor1);
-int updateCatCollar2(const int index, const int newColor2);
+int updateCatCollar1(const int index, const enum Color newColor1);
+int updateCatCollar2(const int index, const enum Color newColor2);
 int updateLicense(const int index, const unsigned long long license);
 int updateBirthday(const int index, const char *date);
 

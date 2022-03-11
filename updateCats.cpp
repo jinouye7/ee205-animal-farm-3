@@ -102,7 +102,7 @@ int updateCatWeight(const int index,const float newWeight){
 }
 
 //function to update collar color 1 at a specified index
-int updateCatCollar1(const int index, const int newColor1){
+int updateCatCollar1(const int index, const enum Color newColor1){
     if (index >= currentNumberCats){
         fprintf(stderr, "%s: no cat at index %d\n", PROGRAM_NAME,  index);
         return 1;
@@ -143,7 +143,7 @@ int updateCatCollar1(const int index, const int newColor1){
 
 
 //function to update collar color 2 at a specified index
-int updateCatCollar2(const int index, const int newColor2){
+int updateCatCollar2(const int index, const enum Color newColor2){
     if (index >= currentNumberCats){
         fprintf(stderr, "%s: no cat at index %d\n", PROGRAM_NAME,  index);
         return 1;

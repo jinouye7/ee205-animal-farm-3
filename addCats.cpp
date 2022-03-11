@@ -18,7 +18,7 @@
 #include "config.h"
 //#define DEBUG
 
-int addCat(const char name[], const int gender, const int breed, const bool isFixed, const float weight, const int collarColor1, const int collarColor2, const unsigned long long license, const char *date){
+int addCat(const char name[], const enum Gender gender, const enum Breed breed, const bool isFixed, const float weight, const enum Color collarColor1, const enum Color collarColor2, const unsigned long long license, const char *date){
     if (currentNumberCats >=  MAXCATS){
         fprintf(stderr, "%s: number of cats exceeded\n", PROGRAM_NAME);
         return 1;

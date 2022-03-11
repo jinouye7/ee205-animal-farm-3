@@ -43,8 +43,8 @@ int main() {
     assert(updateCatName( kali, "Capulet" ) == 0) ;
     assert(updateCatWeight( kali, 9.9 ) == 0) ;
     assert(fixCat( kali ) == 0) ;
-    assert(updateCatCollar1( kali, 2) == 0);
-    assert(updateCatCollar2( kali, 3) == 0);
+    assert(updateCatCollar1( kali, RED) == 0);
+    assert(updateCatCollar2( kali, BLUE) == 0);
     assert(updateLicense( kali, 111) == 0);
     assert(updateBirthday( kali, "March 17,2000") == 0);
     assert(printCat( kali ) == 0);
