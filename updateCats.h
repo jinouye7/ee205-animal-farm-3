@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 int updateCatName(const int index, const char newName[]);
 int fixCat(const int index);
-int updateCatWeight(const int index, const float newWeight);
+int updateCatWeight(const int index, const Weight newWeight);
 int updateCatCollar1(const int index, const enum Color newColor1);
 int updateCatCollar2(const int index, const enum Color newColor2);
 int updateLicense(const int index, const unsigned long long license);

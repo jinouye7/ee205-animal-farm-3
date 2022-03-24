@@ -80,7 +80,7 @@ int fixCat(const int index){
 
 
 //fuction to update cat weight at a specified index
-int updateCatWeight(const int index,const float newWeight){
+int updateCatWeight(const int index,const Weight newWeight){
     if (index >= currentNumberCats){
         fprintf(stderr, "%s: no cat at index %d\n", PROGRAM_NAME,  index);
         return 1;

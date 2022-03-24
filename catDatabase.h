@@ -21,6 +21,8 @@ enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 
 enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
+typedef float Weight;
+
 /// Declaring a Cat struct
 struct Cat {
     char name[MAXLENGTH];

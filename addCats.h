@@ -11,5 +11,5 @@
 #include <stdbool.h>
 #include "catDatabase.h"
 
-int addCat(const char name[], const enum Gender gender, const enum Breed breed, const bool isFixed, const float weight, const enum Color collarColor1, const enum Color collarColor2, const unsigned long long license, const char *date);
+int addCat(const char name[], const enum Gender gender, const enum Breed breed, const bool isFixed, const Weight weight, const enum Color collarColor1, const enum Color collarColor2, const unsigned long long license, const char *date);
 
