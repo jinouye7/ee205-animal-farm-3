@@ -23,6 +23,9 @@ enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
 typedef float Weight;
 
+typedef int NumCats;
+
+
 /// Declaring a Cat struct
 struct Cat {
     char name[MAXLENGTH];
@@ -38,7 +41,7 @@ struct Cat {
 
 extern struct Cat cats[MAXCATS];
 
-extern int currentNumberCats;
+extern NumCats currentNumberCats;
 
 
 /// Functions that return a string for the name of the gender, color, and cat breeds

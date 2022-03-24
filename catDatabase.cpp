@@ -17,7 +17,7 @@
 #include <stdbool.h>
 #include "config.h"
 
-int currentNumberCats = 0;
+NumCats currentNumberCats = 0;
 
 struct Cat cats[MAXCATS];
 
