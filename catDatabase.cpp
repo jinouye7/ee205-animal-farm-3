@@ -42,6 +42,7 @@ Cats::Cats() {
 /// constructor with bare minimum for valid cat
 Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) : Cats() {
     setName( newName ) ;
+    /// @todo
     /// setGender( newGender ) ;
     /// setBreed( newBreed ) ;
     /// setWeight( newWeight ) ;
@@ -53,6 +54,12 @@ Cats::~Cats() {
     zeroOutMemberData() ;
 }
 
+void Cats::setName(const char *newName) {
+    /// @todo validateName( newName ) ;  // Throws an exception if there's a problem.
+
+    memset( name, 0, MAXLENGTH );  /// erase the old name
+    strcpy( name, newName );  /// sets new name
+}
 
 
 

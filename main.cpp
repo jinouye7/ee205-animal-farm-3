@@ -22,11 +22,12 @@
 #define MAX_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx"
 #define ILLEGAL_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy"
 //#define BIRTHDAY
+//#define OLD
 
 
 int main() {
 
-
+#ifdef OLD
     addCat( "Loki", MALE, PERSIAN, true, 8.5,  BLACK, WHITE, 101, "May 4, 2000") ;
     addCat( "Milo", MALE, MANX, true, 7.0 ,  BLACK, RED, 102, "May 4, 2000") ;
     addCat( "Bella", FEMALE, MAINE_COON, true, 18.2 , BLACK, BLUE, 103, "May 4, 2000") ;
@@ -52,6 +53,7 @@ int main() {
     assert(deleteAllCats() == 0);
     assert(printAllCats() == 1); //this should fail (all cats deleted)
 
+#endif
 
 
 #ifdef DEBUG
