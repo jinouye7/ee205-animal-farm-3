@@ -11,6 +11,9 @@
 
 #include<memory.h>
 #include<stdio.h>
+#include <cstring>
+#include <stdexcept>
+#include <iostream>
 #include<time.h>
 #include <stdbool.h>
 
@@ -19,6 +22,42 @@
 #include "catDatabase.h"
 
 NumCats currentNumberCats = 0;
+
+using namespace std ;
+
+void Cats::zeroOutMemberData() {
+    memset( name, 0, MAXLENGTH );
+    gender = UNKNOWN_GENDER ;
+    breed = UNKNOWN_BREED ;
+    isFixed = false ;
+    weight = -1 ;
+    next = nullptr ;
+}
+
+/// constuctor with no parameters (all default falues)
+Cats::Cats() {
+    zeroOutMemberData() ;
+}
+
+Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) : Cats() {
+    setName( newName ) ;
+    setGender( newGender ) ;
+    setBreed( newBreed ) ;
+    setWeight( newWeight ) ;
+
+    ///@todo assert( validate() ) ;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 struct Cat cats[MAXCATS];
 
