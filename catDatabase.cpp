@@ -34,21 +34,24 @@ void Cats::zeroOutMemberData() {
     next = nullptr ;
 }
 
-/// constuctor with no parameters (all default falues)
+/// constuctor with no parameters (all default values)
 Cats::Cats() {
     zeroOutMemberData() ;
 }
 
+/// constructor with bare minimum for valid cat
 Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) : Cats() {
     setName( newName ) ;
-    setGender( newGender ) ;
-    setBreed( newBreed ) ;
-    setWeight( newWeight ) ;
+    /// setGender( newGender ) ;
+    /// setBreed( newBreed ) ;
+    /// setWeight( newWeight ) ;
 
-    ///@todo assert( validate() ) ;
+    /// @todo assert( validate() ) ;
 }
 
-
+Cats::~Cats() {
+    zeroOutMemberData() ;
+}
 
 
 
