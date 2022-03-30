@@ -8,14 +8,15 @@
 /// @author Jared Inouye <jinouye7@hawaii.edu>
 /// @date   09_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include "catDatabase.h"
+
 #include<memory.h>
 #include<stdio.h>
 #include<time.h>
-
-#include "catDatabase.h"
 #include <stdbool.h>
+
+
 #include "config.h"
+#include "catDatabase.h"
 
 NumCats currentNumberCats = 0;
 
