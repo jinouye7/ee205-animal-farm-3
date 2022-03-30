@@ -11,15 +11,22 @@
 
 #include<memory.h>
 #include<stdio.h>
-#include <cstring>
-#include <stdexcept>
-#include <iostream>
 #include<time.h>
 #include <stdbool.h>
 
 
+#include <cstring>
+#include <stdexcept>
+#include <iostream>
+#include <iomanip>
+#include <cassert>
+
 #include "config.h"
 #include "catDatabase.h"
+
+/// Format a line for printing the members of a class
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
+
 
 NumCats currentNumberCats = 0;
 
@@ -61,7 +68,25 @@ void Cats::setName(const char *newName) {
     strcpy( name, newName );  /// sets new name
 }
 
+const char *Cat::getName() const noexcept {
+    return name;
+}
 
+bool Cats::print() const noexcept {
+    /// assert( validate() ) ;
+
+    cout << setw(80) << setfill( '=' ) << "" << endl ;
+    cout << setfill( ' ' ) ;
+    cout << left ;
+    cout << boolalpha ;
+    FORMAT_LINE( "Cat", "name" )         << getName()   << endl ;
+    ///FORMAT_LINE( "Cat", "gender" )       << genderName( getGender() ) << endl ;
+    ///FORMAT_LINE( "Cat", "breed" )        << breedName( getBreed() )   << endl ;
+    ///FORMAT_LINE( "Cat", "isCatFixed" )      << isCatFixed()   << endl ;
+    ///FORMAT_LINE( "Cat", "weight" )       << getWeight() << endl ;
+
+    return true ;
+}
 
 
 
