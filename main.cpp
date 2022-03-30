@@ -27,6 +27,11 @@
 
 int main() {
 
+Cats testCat = Cats();
+testCat.print();
+
+
+
 #ifdef OLD
     addCat( "Loki", MALE, PERSIAN, true, 8.5,  BLACK, WHITE, 101, "May 4, 2000") ;
     addCat( "Milo", MALE, MANX, true, 7.0 ,  BLACK, RED, 102, "May 4, 2000") ;

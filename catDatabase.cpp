@@ -50,7 +50,7 @@ Cats::Cats() {
 Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) : Cats() {
     setName( newName ) ;
     /// @todo
-    /// setGender( newGender ) ;
+    setGender( newGender ) ;
     /// setBreed( newBreed ) ;
     /// setWeight( newWeight ) ;
 
@@ -61,6 +61,8 @@ Cats::~Cats() {
     zeroOutMemberData() ;
 }
 
+/////////////////// Name stuff  ////////////////////////////////////////////////////////////////
+
 void Cats::setName(const char *newName) {
     /// @todo validateName( newName ) ;  // Throws an exception if there's a problem.
 
@@ -68,10 +70,30 @@ void Cats::setName(const char *newName) {
     strcpy( name, newName );  /// sets new name
 }
 
-const char *Cat::getName() const noexcept {
+const char *Cats::getName() const noexcept {
     return name;
 }
 
+
+//////////////////////////////////////////////////////////////////////////////////////
+void Cats::setGender(Gender newGender) {
+    if( gender != UNKNOWN_GENDER ) {
+        throw logic_error( PROGRAM_NAME ": The gender is already set, you can't change it" ) ;
+    }
+
+    // At this point, the gender must be UNKNOWN_GENDER
+    ///validateGender( newGender );
+    Cats::gender = newGender ;
+}
+
+Gender Cats::getGender() const noexcept {
+    return gender;
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
 bool Cats::print() const noexcept {
     /// assert( validate() ) ;
 
@@ -80,7 +102,7 @@ bool Cats::print() const noexcept {
     cout << left ;
     cout << boolalpha ;
     FORMAT_LINE( "Cat", "name" )         << getName()   << endl ;
-    ///FORMAT_LINE( "Cat", "gender" )       << genderName( getGender() ) << endl ;
+    FORMAT_LINE( "Cat", "gender" )       << genderName( getGender() ) << endl ;
     ///FORMAT_LINE( "Cat", "breed" )        << breedName( getBreed() )   << endl ;
     ///FORMAT_LINE( "Cat", "isCatFixed" )      << isCatFixed()   << endl ;
     ///FORMAT_LINE( "Cat", "weight" )       << getWeight() << endl ;
