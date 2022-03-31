@@ -20,7 +20,7 @@
 #include "updateCats.h"
 #include "deleteCats.h"
 #include "config.h"
-//#define DEBUG
+#define DEBUG
 #define MAX_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx"
 #define ILLEGAL_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy"
 //#define BIRTHDAY
@@ -29,11 +29,35 @@
 
 int main() {
 
-Cats testCat = Cats();
-testCat.print();
+#ifdef DEBUG
+
+    //test default values
+    Cats testCat ;// = Cats();
+
+    Cats testCat2 = Cats("test", MALE, PERSIAN, 1.0);
+
+    testCat.print();
+
+    testCat2.print();
+
+    //test validate name
+    testCat.validateName("");
+    testCat.validateName("");
+    testCat.validateName("");
+    testCat.validateName("");
+
+    //test validate gender
+    testCat.validateGender(UNKNOWN_GENDER);
+
+    //test validate breed
+    testCat.validateBreed(UNKNOWN_BREED);
+
+
+
 
 std:: cerr  << PROGRAM_NAME << " is the name of the program"  << std:: endl;
 
+#endif
 
 
 #ifdef OLD
@@ -64,29 +88,6 @@ std:: cerr  << PROGRAM_NAME << " is the name of the program"  << std:: endl;
 
 #endif
 
-
-#ifdef DEBUG
-    // Test for empty name
-        assert( addCat( "", UNKNOWN_GENDER, SHORTHAIR,  false, 19.0, BLACK, WHITE, 101, "May 4, 2000" ) == 1 ) ;
-        // Test for max name
-        assert( addCat( MAX_NAME, UNKNOWN_GENDER, SHORTHAIR,  false, 19.0, WHITE, RED, 107, "May 4, 2000" ) == 1 ) ;
-        // Test for name too long
-        assert( addCat( ILLEGAL_NAME, UNKNOWN_GENDER, SHORTHAIR,  false, 19.0, WHITE, BLUE, 108, "May 4, 2000" ) == 1 ) ;
-        // Test for duplicate cat name
-        assert( addCat( "Chili", UNKNOWN_GENDER, SHORTHAIR,  false, 0, WHITE, GREEN, 109, "May 4, 2000" ) == 1 ) ;
-        // Test for weight <= 0
-        assert( addCat( "Neo", UNKNOWN_GENDER, SHORTHAIR,  false, 0, WHITE, BLACK, 110,"May 4, 2000") == 1 ) ;
-        // Test for duplicate license
-        assert( addCat( "testcat", UNKNOWN_GENDER, SHORTHAIR,  false, 19.0, BLACK, RED, 101, "May 4, 2000" ) == 0 );
-        assert( addCat( "testcata", UNKNOWN_GENDER, SHORTHAIR,  false, 19.0, BLACK, PINK, 101, "May 4, 2000" ) == 1 ) ;
-        // Test for duplicate collar color
-        assert( addCat( "testcatb", UNKNOWN_GENDER, SHORTHAIR,  false, 19.0, WHITE, PINK, 111, "May 4, 2000" ) == 0 ) ;
-        assert( addCat( "testcatc", UNKNOWN_GENDER, SHORTHAIR,  false, 19.0, WHITE, PINK, 112, "May 4, 2000" ) == 1 ) ;
-        // Test for matching collar color 1 and 1
-        assert( addCat( "testcatd", UNKNOWN_GENDER, SHORTHAIR,  false, 19.0, WHITE, WHITE, 113, "May 4, 2000" ) == 1 ) ;
-
-
-#endif
 
 //testing birthday stuff
 

@@ -157,9 +157,27 @@ bool Cats::validateName(const char *newName) {
 }
 
 /// validate gender ///
+bool Cats::validateGender(const Gender newGender) {
+    if( newGender == UNKNOWN_GENDER ) {
+        cerr  << PROGRAM_NAME << ": Gender must be known"  << endl;
+        return false;
+    }
 
+    return true;
+}
 
-/// breed, fixed, weight ///
+/// validate Breed ///
+bool Cats::validateBreed(const Breed newBreed) {
+    if( newBreed == UNKNOWN_BREED ) {
+        cerr  << PROGRAM_NAME << ": Breed must be known"  << endl;
+        return false;
+    }
+
+    return true;
+}
+
+/// validate weight ///
+
 /////////////////////////////// print   ////////////////////////////////////////////////////////////////////
 bool Cats::print() const noexcept {
     /// assert( validate() ) ;
