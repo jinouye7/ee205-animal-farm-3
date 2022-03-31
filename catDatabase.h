@@ -1,12 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_08d_animal_farm_1_to_clion - EE 205 - Spr 2022
+/// @brief  ee205_lab_10d_animal_farm_2 - EE 205 - Spr 2022
 ///
 /// @file catDatabase.h
 /// @version 1.0
 ///
 /// @author Jared Inouye <jinouye7@hawaii.edu>
-/// @date   09_Mar_2022
+/// @date   29_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -49,7 +49,7 @@ public:   /// Constructors
     Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight);
 
     /// Zero out all of the member data
-    virtual ~Cats();
+ //   virtual ~Cats();
 
 public: /// Getters and Setters
     const char *getName() const noexcept ; /// Get the Cat's name

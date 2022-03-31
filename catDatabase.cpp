@@ -1,12 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_08d_animal_farm_1_to_clion - EE 205 - Spr 2022
+/// @brief  ee205_lab_08d_animal_farm_2 - EE 205 - Spr 2022
 ///
 /// @file catDatabase.cpp
 /// @version 1.0
 ///
 /// @author Jared Inouye <jinouye7@hawaii.edu>
-/// @date   09_Mar_2022
+/// @date   29_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
 #include<memory.h>
@@ -57,11 +57,13 @@ Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, co
     /// @todo assert( validate() ) ;
 }
 
+/*
 Cats::~Cats() {
     zeroOutMemberData() ;
 }
+*/
 
-/////////////////// Name stuff  ////////////////////////////////////////////////////////////////
+/////////////////// Name Getter & Setter  ////////////////////////////////////////////////////////////////
 
 void Cats::setName(const char *newName) {
     /// @todo validateName( newName ) ;  // Throws an exception if there's a problem.
@@ -75,7 +77,7 @@ const char *Cats::getName() const noexcept {
 }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+////////////////////    Gender Getter & Setter    ////////////////////////////////////////////////////////
 void Cats::setGender(Gender newGender) {
     if( gender != UNKNOWN_GENDER ) {
         throw logic_error( PROGRAM_NAME ": The gender is already set, you can't change it" ) ;
@@ -91,7 +93,20 @@ Gender Cats::getGender() const noexcept {
 }
 
 
+////////////////////    Breed Getter & Setter    ////////////////////////////////////////////////////////
 
+void Cats::setBreed(Breed newBreed) {
+    if( breed != UNKNOWN_BREED ) {
+        throw logic_error( PROGRAM_NAME ": The breed is already set, you can't change it" ) ;
+    }
+    // breed is unknown so we can set the breed
+    /// validateBreed( newBreed ) ;
+    Cats::breed = newBreed;
+}
+
+    Breed Cats::getBreed() const noexcept {
+        return breed;
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////
 bool Cats::print() const noexcept {
@@ -103,7 +118,7 @@ bool Cats::print() const noexcept {
     cout << boolalpha ;
     FORMAT_LINE( "Cat", "name" )         << getName()   << endl ;
     FORMAT_LINE( "Cat", "gender" )       << genderName( getGender() ) << endl ;
-    ///FORMAT_LINE( "Cat", "breed" )        << breedName( getBreed() )   << endl ;
+    FORMAT_LINE( "Cat", "breed" )        << breedName( getBreed() )   << endl ;
     ///FORMAT_LINE( "Cat", "isCatFixed" )      << isCatFixed()   << endl ;
     ///FORMAT_LINE( "Cat", "weight" )       << getWeight() << endl ;
 
@@ -115,7 +130,7 @@ bool Cats::print() const noexcept {
 
 
 
-
+////////////////////////////////////// old code /////////////////////////////////////////////////////
 struct Cat cats[MAXCATS];
 
 
