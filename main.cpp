@@ -32,7 +32,7 @@ int main() {
 #ifdef DEBUG
 
     //test default values
-    Cats testCat ;// = Cats();
+    Cats testCat = Cats();
 
     Cats testCat2 = Cats("test", MALE, PERSIAN, 1.0);
 
@@ -41,9 +41,6 @@ int main() {
     testCat2.print();
 
     //test validate name
-    testCat.validateName("");
-    testCat.validateName("");
-    testCat.validateName("");
     testCat.validateName("");
 
     //test validate gender
@@ -55,6 +52,11 @@ int main() {
     //test validate weight
     testCat.validateWeight(0);
     testCat.validateWeight(-1);
+
+    //test validate cat
+    testCat2.validate();
+    printf("this one should break\n");
+    testCat.validate();
 
 
 

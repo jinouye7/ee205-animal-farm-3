@@ -185,6 +185,25 @@ bool Cats::validateWeight(const Weight newWeight) {
 
     return true;
 }
+
+
+/// validate cat ///
+
+bool Cats::validate() const noexcept {
+        if (validateName( name ) == false) {
+            return false;
+        }
+        if (validateGender( gender ) == false) {
+            return false;
+        }
+        if (validateBreed( breed ) == false ) {
+            return false;
+        }
+        if (validateWeight( weight ) == false ) {
+            return false;
+        }
+        return true;
+}
 /////////////////////////////// print   ////////////////////////////////////////////////////////////////////
 bool Cats::print() const noexcept {
     /// assert( validate() ) ;
