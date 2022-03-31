@@ -108,7 +108,7 @@ void Cats::setBreed(Breed newBreed) {
         return breed;
     }
 
-////////////////////    Breed Getter & Setter    ////////////////////////////////////////////////////////
+////////////////////    isFixed Getter & Setter    ////////////////////////////////////////////////////////
 
 //// setter to fix cat
 void Cats::fixCat() noexcept {
@@ -119,6 +119,17 @@ void Cats::fixCat() noexcept {
 
 bool Cats::isCatFixed() const noexcept {
     return isFixed;
+}
+
+////////////////////    Weight Getter & Setter    ////////////////////////////////////////////////////////
+
+Weight Cats::getWeight() const noexcept {
+    return weight;
+}
+
+void Cats::setWeight(Weight newWeight) {
+    ///validateWeight( newWeight ) ;
+    Cats::weight = newWeight;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -133,7 +144,7 @@ bool Cats::print() const noexcept {
     FORMAT_LINE( "Cat", "gender" )       << genderName( getGender() ) << endl ;
     FORMAT_LINE( "Cat", "breed" )        << breedName( getBreed() )   << endl ;
     FORMAT_LINE( "Cat", "isCatFixed" )      << isCatFixed()   << endl ;
-    ///FORMAT_LINE( "Cat", "weight" )       << getWeight() << endl ;
+    FORMAT_LINE( "Cat", "weight" )       << getWeight() << endl ;
 
     return true ;
 }
