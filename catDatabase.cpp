@@ -177,7 +177,14 @@ bool Cats::validateBreed(const Breed newBreed) {
 }
 
 /// validate weight ///
+bool Cats::validateWeight(const Weight newWeight) {
+    if( newWeight <= 0 ) {
+        cerr  << PROGRAM_NAME << ": Weight must be > 0"  << endl;
+        return false;
+    }
 
+    return true;
+}
 /////////////////////////////// print   ////////////////////////////////////////////////////////////////////
 bool Cats::print() const noexcept {
     /// assert( validate() ) ;

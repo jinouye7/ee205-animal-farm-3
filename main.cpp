@@ -52,6 +52,10 @@ int main() {
     //test validate breed
     testCat.validateBreed(UNKNOWN_BREED);
 
+    //test validate weight
+    testCat.validateWeight(0);
+    testCat.validateWeight(-1);
+
 
 
 
