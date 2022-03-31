@@ -53,10 +53,7 @@ public:   /// Constructors
 
 public: /// Getters and Setters
     const char *getName() const noexcept ; /// Get the Cat's name
-    void setName( const char* newName );   /// Set the Cat's name.  The name
-    /// must not be empty and it must
-    /// be <= MAX_CAT_NAME in length.
-
+    void setName( const char* newName );   /// Set the Cat's name
     Gender getGender() const noexcept ;  /// Get the Cat's gender
     Breed getBreed() const noexcept ;    /// Get the Cat's breed
     bool isCatFixed() const noexcept ;      /// Return true if the cat is fixed

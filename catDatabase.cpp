@@ -65,7 +65,6 @@ Cats::~Cats() {
 /////////////////// Name Getter & Setter  ////////////////////////////////////////////////////////////////
 
 void Cats::setName(const char *newName) {
-    /// @todo validateName( newName ) ;  // Throws an exception if there's a problem.
 
     memset( name, 0, MAXLENGTH );  /// erase the old name
     strcpy( name, newName );  /// sets new name
@@ -83,7 +82,6 @@ void Cats::setGender(Gender newGender) {
     }
 
     // At this point, the gender must be UNKNOWN_GENDER
-    ///validateGender( newGender );
     Cats::gender = newGender ;
 }
 
@@ -99,7 +97,6 @@ void Cats::setBreed(Breed newBreed) {
         throw logic_error( PROGRAM_NAME ": The breed is already set, you can't change it" ) ;
     }
     // breed is unknown so we can set the breed
-    /// validateBreed( newBreed ) ;
     Cats::breed = newBreed;
 }
 
@@ -127,7 +124,6 @@ Weight Cats::getWeight() const noexcept {
 }
 
 void Cats::setWeight(Weight newWeight) {
-    ///validateWeight( newWeight ) ;
     Cats::weight = newWeight;
 }
 
@@ -136,19 +132,16 @@ void Cats::setWeight(Weight newWeight) {
 /// validate name ///
 bool Cats::validateName(const char *newName) {
     if( newName == nullptr ) {
-        ///throw invalid_argument(PROGRAM_NAME ": name must not be NULL");
         cerr  << PROGRAM_NAME << ": name must not be NULL"  << endl;
         return false;
     }
 
     if( strlen( newName ) <= 0 ) {
-        ///throw length_error( PROGRAM_NAME ": name length must be > 0");
         cerr  << PROGRAM_NAME << ": name must be > 0"  << endl;
         return false;
     }
 
     if( strlen( newName ) >= MAXLENGTH ) {
-        ///throw length_error( PROGRAM_NAME ": name must be < MAX_CAT_NAME" );
         cerr  << PROGRAM_NAME << ": name must be < MAX_CAT_NAME"  << endl;
         return false;
     }

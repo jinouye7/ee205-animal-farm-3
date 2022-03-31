@@ -55,7 +55,7 @@ int main() {
 
     //test validate cat
     testCat2.validate();
-    printf("this one should break\n");
+    printf("this one should have an error\n");
     testCat.validate();
 
 
