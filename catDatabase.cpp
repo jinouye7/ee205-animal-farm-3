@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_08d_animal_farm_2 - EE 205 - Spr 2022
+/// @brief  ee205_lab_10d_animal_farm_2 - EE 205 - Spr 2022
 ///
 /// @file catDatabase.cpp
 /// @version 1.0
@@ -49,10 +49,9 @@ Cats::Cats() {
 /// constructor with bare minimum for valid cat
 Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) : Cats() {
     setName( newName ) ;
-    /// @todo
     setGender( newGender ) ;
-    /// setBreed( newBreed ) ;
-    /// setWeight( newWeight ) ;
+    setBreed( newBreed ) ;
+    setWeight( newWeight ) ;
 
     /// @todo assert( validate() ) ;
 }
@@ -80,7 +79,7 @@ const char *Cats::getName() const noexcept {
 ////////////////////    Gender Getter & Setter    ////////////////////////////////////////////////////////
 void Cats::setGender(Gender newGender) {
     if( gender != UNKNOWN_GENDER ) {
-        throw logic_error( PROGRAM_NAME ": The gender is already set, you can't change it" ) ;
+        throw logic_error( PROGRAM_NAME ": The gender is already set" ) ;
     }
 
     // At this point, the gender must be UNKNOWN_GENDER
@@ -132,7 +131,36 @@ void Cats::setWeight(Weight newWeight) {
     Cats::weight = newWeight;
 }
 
-//////////////////////////////////////////////////////////////////////////////////////
+////////////////////    Validation    ///////////////////////////////////////////////////////////////////
+
+/// validate name ///
+bool Cats::validateName(const char *newName) {
+    if( newName == nullptr ) {
+        ///throw invalid_argument(PROGRAM_NAME ": name must not be NULL");
+        cerr  << PROGRAM_NAME << ": name must not be NULL"  << endl;
+        return false;
+    }
+
+    if( strlen( newName ) <= 0 ) {
+        ///throw length_error( PROGRAM_NAME ": name length must be > 0");
+        cerr  << PROGRAM_NAME << ": name must be > 0"  << endl;
+        return false;
+    }
+
+    if( strlen( newName ) >= MAXLENGTH ) {
+        ///throw length_error( PROGRAM_NAME ": name must be < MAX_CAT_NAME" );
+        cerr  << PROGRAM_NAME << ": name must be < MAX_CAT_NAME"  << endl;
+        return false;
+    }
+
+    return true;
+}
+
+/// validate gender ///
+
+
+/// breed, fixed, weight ///
+/////////////////////////////// print   ////////////////////////////////////////////////////////////////////
 bool Cats::print() const noexcept {
     /// assert( validate() ) ;
 

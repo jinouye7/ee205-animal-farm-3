@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_08d_animal_farm_2 - EE 205 - Spr 2022
+/// @brief  ee205_lab_10d_animal_farm_2 - EE 205 - Spr 2022
 ///
 /// @file main.cpp
 /// @version 1.0
@@ -13,11 +13,13 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <stdbool.h>
+#include <iostream>
 #include "catDatabase.h"
 #include "addCats.h"
 #include "reportCats.h"
 #include "updateCats.h"
 #include "deleteCats.h"
+#include "config.h"
 //#define DEBUG
 #define MAX_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx"
 #define ILLEGAL_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy"
@@ -29,6 +31,8 @@ int main() {
 
 Cats testCat = Cats();
 testCat.print();
+
+std:: cerr  << PROGRAM_NAME << " is the name of the program"  << std:: endl;
 
 
 
