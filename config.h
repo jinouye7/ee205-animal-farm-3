@@ -11,6 +11,9 @@
 
 #pragma once
 #define PROGRAM_NAME "animalFarm2"
+#define MAXLENGTH 50 /// maximum name length
+#define MAXCATS 1024 /// maximum number of cats
 
 typedef float Weight ;
-const Weight UNKNOWN_WEIGHT = -1 ;  ///< Set when the Weight is unknown
+typedef int NumCats;
+const Weight UNKNOWN_WEIGHT = -1 ;  /// Weight is unknown

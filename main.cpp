@@ -20,6 +20,7 @@
 #include "reportCats.h"
 #include "updateCats.h"
 #include "deleteCats.h"
+#include "Cats.h"
 #include "config.h"
 #define DEBUG
 #define MAX_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx"

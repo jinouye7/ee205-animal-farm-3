@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include "deleteCats.h"
 #include "catDatabase.h"
+#include "Cats.h"
 #include "config.h"
 
 int deleteAllCats(){

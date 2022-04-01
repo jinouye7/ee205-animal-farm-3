@@ -19,6 +19,7 @@
 #include "catDatabase.h"
 #include "addCats.h"
 #include "config.h"
+#include "Cats.h"
 //#define DEBUG
 
 using namespace std;

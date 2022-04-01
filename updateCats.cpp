@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "catDatabase.h"
+#include "Cats.h"
 #include "updateCats.h"
 #include "config.h"
 
