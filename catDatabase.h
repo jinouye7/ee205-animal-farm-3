@@ -25,6 +25,9 @@ typedef float Weight;
 
 typedef int NumCats;
 
+
+
+
 /// declaring a Cat class
 
 class Cats {
@@ -78,6 +81,7 @@ public: /// Static Public Methods
 
 
 };
+
 
 /// Declaring a Cat struct
 struct Cat {
