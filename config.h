@@ -12,4 +12,5 @@
 #pragma once
 #define PROGRAM_NAME "animalFarm2"
 
-
+typedef float Weight ;
+const Weight UNKNOWN_WEIGHT = -1 ;  ///< Set when the Weight is unknown

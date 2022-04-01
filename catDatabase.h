@@ -12,6 +12,7 @@
 #pragma once
 #include <stdbool.h>
 #include <time.h>
+#include "config.h"
 #define MAXLENGTH 50
 #define MAXCATS 1024
 
@@ -21,7 +22,7 @@ enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 
 enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
-typedef float Weight;
+// typedef float Weight;
 
 typedef int NumCats;
 

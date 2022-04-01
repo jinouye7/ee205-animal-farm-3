@@ -37,7 +37,7 @@ void Cats::zeroOutMemberData() {
     gender = UNKNOWN_GENDER ;
     breed = UNKNOWN_BREED ;
     isFixed = false ;
-    weight = -1 ;
+    weight = UNKNOWN_WEIGHT ;
     next = nullptr ;
 }
 
