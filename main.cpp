@@ -14,6 +14,7 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <iostream>
+#include <exception>
 #include "catDatabase.h"
 #include "addCats.h"
 #include "reportCats.h"
@@ -25,6 +26,8 @@
 #define ILLEGAL_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy"
 //#define BIRTHDAY
 //#define OLD
+
+using namespace std ;
 
 
 int main() {
@@ -50,19 +53,39 @@ int main() {
     testCat.validateBreed(UNKNOWN_BREED);
 
     //test validate weight
-    testCat.validateWeight(0);
     testCat.validateWeight(-1);
 
     //test validate cat
     testCat2.validate();
-    printf("this one should have an error\n");
+    printf("this one should have an error: \n");
     testCat.validate();
 
+    //test validation in addCat
+    try {
+        printf("addCats validation failure Name: \n");
+        addCats(new Cats("", MALE, PERSIAN, 1.0));
+        assert(false);
+    } catch (exception const &e) {}
+    try {
+        printf("addCats validation failure Gender: \n");
+        addCats(new Cats("test", UNKNOWN_GENDER, PERSIAN, 1.0));
+        assert(false);
+    } catch (exception const &e) {}
+    try {
+        printf("addCats validation failure Breed: \n");
+        addCats(new Cats("test", MALE, UNKNOWN_BREED, 1.0));
+        assert(false);
+    } catch (exception const &e) {}
+    try {
+        printf("addCats validation failure Weight: \n");
+        addCats(new Cats("test", MALE, PERSIAN, -1.0));
+        assert(false);
+    } catch (exception const &e) {}
 
 
+    std:: cerr  << PROGRAM_NAME << " is the name of the program"  << std:: endl;
 
-std:: cerr  << PROGRAM_NAME << " is the name of the program"  << std:: endl;
-
+    //addCats(new Cats("test", UNKNOWN_GENDER, PERSIAN, 1.0));
 #endif
 
 

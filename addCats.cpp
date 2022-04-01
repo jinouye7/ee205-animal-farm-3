@@ -12,11 +12,26 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+#include <cassert>
 #include <string.h>
+
 #include "catDatabase.h"
 #include "addCats.h"
 #include "config.h"
 //#define DEBUG
+
+using namespace std;
+bool addCats(Cats* newCat) {
+    //new cat must not be nullptr
+    assert( newCat != nullptr );
+    //validate the newCat
+    if (newCat->validate() ==  false){
+        throw invalid_argument("BAD CAT");
+    }
+
+
+}
 
 int addCat(const char name[], const enum Gender gender, const enum Breed breed, const bool isFixed, const Weight weight, const enum Color collarColor1, const enum Color collarColor2, const unsigned long long license, const char *date){
     if (currentNumberCats >=  MAXCATS){
