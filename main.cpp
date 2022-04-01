@@ -83,6 +83,10 @@ int main() {
         assert(false);
     } catch (exception const &e) {}
 
+    //test addCats
+    addCats(new Cats("test", MALE, PERSIAN, 1.0));
+
+
 
     std:: cerr  << PROGRAM_NAME << " is the name of the program"  << std:: endl;
 

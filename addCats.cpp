@@ -31,7 +31,20 @@ bool addCats(Cats* newCat) {
         throw invalid_argument("BAD CAT");
     }
 
+    //database must be valid before adding a new cat
+    assert(validateDatabase()) ;
 
+    //add the cat
+    newCat->next = catDatabaseHeadPointer ;
+    catDatabaseHeadPointer = newCat ;
+    currentNumberCats++;
+
+    //re-validate database after adding cat
+    assert(validateDatabase());
+
+    cout << "Added cat" <<endl;
+
+    return true;
 
 }
 ////////////////////// old add cat ////////////////////////////////////////////////////////////////////////////////
