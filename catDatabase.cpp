@@ -25,9 +25,38 @@
 #include "catDatabase.h"
 #include "Cats.h"
 
+using namespace std;
 
+///////// setting up linked list for cat database////////////////////////////////////
 
+/// initialize number of cats
+NumCats currentNumberCats = 0;
+/// head pointer
+Cats* catDatabaseHeadPointer = nullptr ;
 
+///////// database validation /////////////////////////////////////////////////////
+extern bool validateDatabase() {
+    int validCats = 0 ;
+
+    /// revalidate all the cats in the list
+    for(Cats* i = catDatabaseHeadPointer ; i != nullptr ; i = i->next ) {
+        if( !i->validate() ) {
+            return false ;
+        }
+
+        validCats++ ;
+    }
+
+    if( validCats != currentNumberCats ) {
+        cerr << PROGRAM_NAME << ": Error:  numberOfCats [" << currentNumberCats
+             << "] does not equal [" << validCats << "]" << endl ;
+        return false ;
+    }
+
+    cout << PROGRAM_NAME << ": The database is valid." << endl ;
+
+    return true ;  // The database is healthy
+}
 
 ////////////////////////////////////// old code /////////////////////////////////////////////////////
 struct Cat cats[MAXCATS];

@@ -30,8 +30,6 @@
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 
-NumCats currentNumberCats = 0;
-
 using namespace std ;
 
 void Cats::zeroOutMemberData() {

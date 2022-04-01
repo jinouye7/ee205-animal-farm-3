@@ -16,6 +16,13 @@
 #include "Cats.h"
 
 
+/// linked list head pointer
+extern Cats* catDatabaseHeadPointer ;
+extern NumCats currentNumberCats;
+
+/// database validation
+extern bool validateDatabase();
+
 
 /// Declaring a Cat struct
 struct Cat {
@@ -32,7 +39,6 @@ struct Cat {
 
 extern struct Cat cats[MAXCATS];
 
-extern NumCats currentNumberCats;
 
 
 /// Functions that return a string for the name of the gender, color, and cat breeds
