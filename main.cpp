@@ -6,7 +6,7 @@
 /// @version 1.0
 ///
 /// @author Jared Inouye <jinouye7@hawaii.edu>
-/// @date   02_Mar_2022
+/// @date   31_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
@@ -85,6 +85,18 @@ int main() {
 
     //test addCats
     addCats(new Cats("test", MALE, PERSIAN, 1.0));
+    addCats(new Cats("Milo", MALE, MANX , 1.1));
+    addCats(new Cats("Bella", FEMALE, MAINE_COON, 1.2));
+
+    //test printallcats
+    printAllCats();
+
+    //test findCatbyName
+    //no match
+    findCatByName( "uwu" );
+    //match (used print method to print match)
+    cout << findCatByName( "Milo" ) << endl;
+    findCatByName("Milo")->print();
 
 
 

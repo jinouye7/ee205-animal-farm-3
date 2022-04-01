@@ -1,21 +1,61 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_08d_animal_farm_1_to_clion - EE 205 - Spr 2022
+/// @brief  ee205_lab_10d_animal_farm_2 - EE 205 - Spr 2022
 ///
 /// @file reportCats.cpp
 /// @version 1.0
 ///
 /// @author Jared Inouye <jinouye7@hawaii.edu>
-/// @date   09_Mar_2022
+/// @date   31_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include "reportCats.h"
 
-#include "catDatabase.h"
-#include "Cats.h"
 #include <stdio.h>
 #include <string.h>
+#include <cstring>
+#include <stdexcept>
+#include <iostream>
+#include <cassert>
+
+#include "reportCats.h"
+#include "catDatabase.h"
+#include "Cats.h"
 #include "config.h"
 
+bool printAllCats() {
+    int numCats = 0 ;
+
+    //validate database before printing
+    assert( validateDatabase() ) ;
+
+    //print each cat in database until nullptr
+    for(Cats* i = catDatabaseHeadPointer ; i != nullptr ; i = i->next ) {
+        i->print() ;
+        numCats++ ;
+    }
+
+    //validate database again
+    assert( validateDatabase() ) ;
+
+    return true;
+}
+
+Cats* findCatByName( const char* name ) {
+    assert( Cats().validateName( name ) );
+
+    //iterate through database until a name match is found
+    for(Cats* i = catDatabaseHeadPointer ; i != nullptr ; i = i->next ) {
+        if( strcmp( name, i->getName() ) == 0 ) {
+            return i ;
+        }
+    }
+
+    std::cout << "no match (returns nullptr)" << std::endl;
+    return nullptr ; // No name matched
+}
+
+//@todo char printCat(const char* name)
+
+#ifdef OLD
 int printCat(const int index){
     //print if cat is not in database
     if (index < 0){
@@ -90,3 +130,4 @@ int findCat(const char name[]){
 }
 
 
+#endif

@@ -53,7 +53,7 @@ extern bool validateDatabase() {
         return false ;
     }
 
-    cout << PROGRAM_NAME << ": The database is valid." << endl ;
+    //cout << PROGRAM_NAME << ": The database is valid." << endl ;
 
     return true ;  // The database is healthy
 }
