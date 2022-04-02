@@ -39,7 +39,7 @@ bool deleteCat( Cats* goner ) {
 
         //validate database after removing cat
         assert( validateDatabase() ) ;
-        cout <<"first cat deleted"<< endl;
+        cout <<"cat deleted"<< endl;
         return true ;
     }
 
@@ -71,5 +71,17 @@ bool deleteCat( Cats* goner ) {
 }
 
 
+bool deleteAllCats() {
+    // go through list and use the deleteCat function to delete cats
+    while(catDatabaseHeadPointer != nullptr ) {
+        deleteCat(catDatabaseHeadPointer ) ;
+    }
 
+    currentNumberCats == 0;
+
+    cout <<  "All cats deleted" << endl ;
+    //note: database empty, no need to re-validate
+
+    return true ;
+}
 

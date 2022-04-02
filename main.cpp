@@ -22,7 +22,7 @@
 #include "deleteCats.h"
 #include "Cats.h"
 #include "config.h"
-#define DEBUG
+//#define DEBUG
 #define MAX_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx"
 #define ILLEGAL_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy"
 //#define BIRTHDAY
@@ -32,6 +32,21 @@ using namespace std ;
 
 
 int main() {
+
+    cout << "Starting Animal Farm 2" << endl;
+
+    addCats(new Cats("Loki", MALE, PERSIAN, 1.0));
+    addCats(new Cats("Milo", MALE, MANX, 1.1));
+    addCats(new Cats("Bella", FEMALE, MAINE_COON, 1.2));
+    addCats(new Cats("Kali", FEMALE, SHORTHAIR, 1.3));
+    addCats(new Cats("Trin", FEMALE, MANX, 1.4));
+    addCats(new Cats("Chili", MALE, SHORTHAIR, 1.5));
+
+    printAllCats();
+    deleteAllCats();
+    printAllCats();
+    cout << "Done with Animal Farm 2" << endl;
+
 
 #ifdef DEBUG
 

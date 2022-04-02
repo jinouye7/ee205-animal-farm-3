@@ -56,11 +56,6 @@ Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, co
     /// @todo assert( validate() ) ;
 }
 
-/*
-Cats::~Cats() {
-    zeroOutMemberData() ;
-}
-*/
 
 /////////////////// Name Getter & Setter  ////////////////////////////////////////////////////////////////
 

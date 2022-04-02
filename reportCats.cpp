@@ -22,7 +22,6 @@
 #include "config.h"
 
 bool printAllCats() {
-    int numCats = 0 ;
 
     //validate database before printing
     assert( validateDatabase() ) ;
@@ -30,7 +29,6 @@ bool printAllCats() {
     //print each cat in database until nullptr
     for(Cats* i = catDatabaseHeadPointer ; i != nullptr ; i = i->next ) {
         i->print() ;
-        numCats++ ;
     }
 
     //validate database again
@@ -55,7 +53,6 @@ Cats* findCatByName( const char* name ) {
 
 }
 
-//@todo char printCat(const char* name)
 
 #ifdef OLD
 int printCat(const int index){

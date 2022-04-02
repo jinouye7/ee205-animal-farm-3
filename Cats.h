@@ -17,9 +17,6 @@ enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 
 enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
-// typedef float Weight; @todo remove
-
-// typedef int NumCats; @todo remove
 
 
 /// declaring a Cat class
@@ -45,8 +42,6 @@ public:   /// Constructors
     ///create a valid cat
     Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight);
 
-    /// Zero out all of the member data
-    //   virtual ~Cats();
 
 public: /// Getters and Setters
     const char *getName() const noexcept ; /// Get the Cat's name
