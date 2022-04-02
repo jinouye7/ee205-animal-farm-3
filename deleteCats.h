@@ -12,5 +12,5 @@
 #include "Cats.h"
 
 bool deleteAllCats();
-bool deleteCat( Cats* name);
+bool deleteCat( Cats* goner);
 

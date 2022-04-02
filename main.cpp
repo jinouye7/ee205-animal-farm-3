@@ -93,7 +93,10 @@ int main() {
 
     //test findCatbyName
     //no match
-    findCatByName( "uwu" );
+    try {
+        findCatByName("no match");
+        assert(false);
+    } catch (exception const &e) {}
     //match (used print method to print match)
     cout << findCatByName( "Milo" ) << endl;
     findCatByName("Milo")->print();

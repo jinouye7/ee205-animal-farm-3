@@ -36,20 +36,20 @@ Cats* catDatabaseHeadPointer = nullptr ;
 
 ///////// database validation /////////////////////////////////////////////////////
 extern bool validateDatabase() {
-    int validCats = 0 ;
+    int validedCats = 0 ;
 
     /// revalidate all the cats in the list
     for(Cats* i = catDatabaseHeadPointer ; i != nullptr ; i = i->next ) {
         if( !i->validate() ) {
             return false ;
         }
-
-        validCats++ ;
+        //keep track of the number of cats validated
+        validedCats++ ;
     }
 
-    if( validCats != currentNumberCats ) {
+    if( validedCats != currentNumberCats ) {
         cerr << PROGRAM_NAME << ": Error:  numberOfCats [" << currentNumberCats
-             << "] does not equal [" << validCats << "]" << endl ;
+             << "] does not equal [" << validedCats << "]" << endl ;
         return false ;
     }
 

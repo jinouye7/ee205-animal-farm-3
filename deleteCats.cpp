@@ -11,21 +11,65 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <cassert>
+#include <iostream>
+
+
 #include "deleteCats.h"
 #include "catDatabase.h"
 #include "Cats.h"
 #include "config.h"
 
-int deleteAllCats(){
-    //commented out code used in animalFarm0
-    /* memset(arrName, 0, sizeof arrName);
-    memset(arrGender, 0, sizeof arrGender);
-    memset(arrBreed, 0, sizeof arrBreed);
-    memset(arrIsFixed, 0, sizeof arrIsFixed);
-    memset(arrWeight, 0, sizeof arrWeight);*/
-    currentNumberCats = 0;
-    printf("all cats deleted\n");
-    return 0;
+using namespace std;
+
+bool deleteCat( Cats* goner ) {
+    //can't delete null pointer
+    assert( goner != nullptr ) ;
+
+    //validate database
+    assert( validateDatabase() ) ;
+
+    // removing the first cat is a special case
+    if( goner == catDatabaseHeadPointer ) {
+        //head pointer reassigned to next cat in the list
+        catDatabaseHeadPointer = catDatabaseHeadPointer->next ;
+        //delete first cat
+        delete goner ;
+        currentNumberCats--;
+
+        //validate database after removing cat
+        assert( validateDatabase() ) ;
+        cout <<"first cat deleted"<< endl;
+        return true ;
+    }
+
+
+    // to delete a cat that isn't the first in the list...
+    // 1) go through list and find the cat before the "goner"
+    Cats* i = catDatabaseHeadPointer ;
+    while( i != nullptr ) {
+        if( i->next == goner ) {
+            // 2) reassign it's next pointer to cat after the "goner"
+            i->next = goner->next ;
+            // 3) "goner" is deleted
+            delete goner ;
+            currentNumberCats--;
+
+            // re-validate database after removing cat
+            assert( validateDatabase() ) ;
+
+            return true ;
+        }
+        i = i->next ;
+    }
+    //if there was no match...
+    //re-validate database
+    assert( validateDatabase() ) ;
+
+    //error handling
+    throw invalid_argument( PROGRAM_NAME ": Cannot delete cat. Not in database" );
 }
+
+
 
 

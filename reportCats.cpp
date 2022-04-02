@@ -49,8 +49,10 @@ Cats* findCatByName( const char* name ) {
         }
     }
 
-    std::cout << "no match (returns nullptr)" << std::endl;
-    return nullptr ; // No name matched
+    //error handling
+    std::cout << "Unable to find cat.  Not in database" << std::endl;
+    throw std::invalid_argument( PROGRAM_NAME ": Unable to find cat.  Not in database" );
+
 }
 
 //@todo char printCat(const char* name)
