@@ -57,7 +57,7 @@ bool deleteCat( Cats* goner ) {
 
             // re-validate database after removing cat
             assert( validateDatabase() ) ;
-
+            cout <<"cat deleted"<< endl;
             return true ;
         }
         i = i->next ;

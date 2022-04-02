@@ -102,6 +102,20 @@ int main() {
     findCatByName("Milo")->print();
 
 
+    //test delete cat
+    //case: first in list
+    deleteCat(findCatByName("Bella"));
+    try {
+        findCatByName("Bella")->print();
+        assert(false);
+    } catch (exception const &e) {}
+    //case: not first
+    deleteCat(findCatByName("test"));
+    try {
+        findCatByName("test")->print();
+        assert(false);
+    } catch (exception const &e) {}
+
 
     std:: cerr  << PROGRAM_NAME << " is the name of the program"  << std:: endl;
 
