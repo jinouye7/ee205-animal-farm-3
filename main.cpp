@@ -22,7 +22,7 @@
 #include "deleteCats.h"
 #include "Cats.h"
 #include "config.h"
-//#define DEBUG
+#define DEBUG
 #define MAX_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx"
 #define ILLEGAL_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy"
 //#define BIRTHDAY
@@ -99,6 +99,7 @@ int main() {
     } catch (exception const &e) {}
 
     //test addCats
+    printf("adding three test cats to linked list using addCats\n");
     addCats(new Cats("test", MALE, PERSIAN, 1.0));
     addCats(new Cats("Milo", MALE, MANX , 1.1));
     addCats(new Cats("Bella", FEMALE, MAINE_COON, 1.2));
@@ -108,10 +109,12 @@ int main() {
 
     //test findCatbyName
     //no match
+    printf("testing findCat with no match:\n");
     try {
         findCatByName("no match");
         assert(false);
     } catch (exception const &e) {}
+    printf("testing findCat with match Milo (address and printCat):\n");
     //match (used print method to print match)
     cout << findCatByName( "Milo" ) << endl;
     findCatByName("Milo")->print();
@@ -119,6 +122,7 @@ int main() {
 
     //test delete cat
     //case: first in list
+    printf("testing delete cat:\n");
     deleteCat(findCatByName("Bella"));
     try {
         findCatByName("Bella")->print();
