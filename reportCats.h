@@ -10,7 +10,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "Cats.h"
 
-bool printCat(const int index);
 bool printAllCats();
 Cats* findCatByName(const char name[]);
 
