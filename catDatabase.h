@@ -24,23 +24,6 @@ extern NumCats currentNumberCats;
 extern bool validateDatabase();
 
 
-/// Declaring a Cat struct
-struct Cat {
-    char name[MAXLENGTH];
-    enum Gender gender;
-    enum Breed breed;
-    bool isFixed;
-    Weight weight;
-    enum Color collarColor1;
-    enum Color collarColor2;
-    unsigned long long license;
-    struct tm birthday;
-};
-
-extern struct Cat cats[MAXCATS];
-
-
-
 /// Functions that return a string for the name of the gender, color, and cat breeds
 char* genderName (const enum Gender gender);
 char* colorName (const enum Color color);
