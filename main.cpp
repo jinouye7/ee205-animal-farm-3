@@ -59,6 +59,14 @@ int main() {
     std::cout << Color::CINNAMON << endl;
     std::cout << Color::CALICO << endl;
 
+    Node testnode1;
+    Node testnode2;
+
+    testnode1.dump();
+    testnode2.dump();
+    std::cout << testnode1.operator>(testnode2) << endl;
+
+
 #endif
 
 

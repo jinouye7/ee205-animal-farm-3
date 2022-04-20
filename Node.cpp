@@ -10,8 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "Node.h"
 
-static bool compareByAddress (const Node *node1, const Node *node2){
-    if (&node1 > &node2) {
+bool Node::compareByAddress (const Node *node1, const Node *node2){
+    if (node1 > node2) {
         return true;
     }
     return false;
@@ -20,19 +20,35 @@ static bool compareByAddress (const Node *node1, const Node *node2){
 bool Node::operator>(const Node& rightSide) {
     // "this" is the objects own address and the leftSide of the operator, so compare:
     // leftSide > rightSide
-
+    /*
     if (this > &rightSide) {
     return true;
     }
     return false;
+     */
+    return Node::compareByAddress( this, &(Node&)rightSide );
 }
 
 void Node::dump() const {
-   // FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl ;
-  //  FORMAT_LINE_FOR_DUMP( "Node", "next" ) << next << std::endl ;
+   FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl ;
+   FORMAT_LINE_FOR_DUMP( "Node", "next" ) << next << std::endl ;
 
 }
 
-bool Node::validate	(	)	const{
 
+bool Node::validate	(	) const noexcept {
+    if( next == nullptr ) {
+        return true;  /// `nullptr` is a valid value for the next pointer.
+    }
+
+    /// @internal Perform a rudimentary recursive loop test and ensure
+    ///           the next pointer does not refer back to itself.
+    ///           This also has the benefit of dereferencing the
+    ///           next pointer and ensuring it points to a valid address.
+    if( next == next->next ) {
+        std::cout << PROGRAM_NAME << ": Recursive loop detected:  next points to itself!";
+        return false;
+    }
+    return true;
 }
+

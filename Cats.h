@@ -12,6 +12,7 @@
 #include "config.h"
 #include "Gender.h"
 #include "Color.h"
+#include "Node.h"
 
 //enum Gender { UNKNOWN_GENDER = 0, MALE = 1, FEMALE = 2 };
 

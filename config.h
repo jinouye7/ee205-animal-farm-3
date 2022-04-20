@@ -35,4 +35,4 @@
 
 typedef float Weight ;
 typedef int NumCats;
-//const Weight UNKNOWN_WEIGHT = -1 ;  /// Weight is unknown
+const Weight UNKNOWN_WEIGHT = -1 ;  /// Weight is unknown
