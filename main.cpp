@@ -34,12 +34,12 @@ int main() {
 
     cout << "Starting Animal Farm 2" << endl;
 
-    addCats(new Cats("Loki", MALE, PERSIAN, 1.0));
-    addCats(new Cats("Milo", MALE, MANX, 1.1));
-    addCats(new Cats("Bella", FEMALE, MAINE_COON, 1.2));
-    addCats(new Cats("Kali", FEMALE, SHORTHAIR, 1.3));
-    addCats(new Cats("Trin", FEMALE, MANX, 1.4));
-    addCats(new Cats("Chili", MALE, SHORTHAIR, 1.5));
+    addCats(new Cats("Loki", Gender::MALE, PERSIAN, 1.0));
+    addCats(new Cats("Milo", Gender::MALE, MANX, 1.1));
+    addCats(new Cats("Bella", Gender::FEMALE, MAINE_COON, 1.2));
+    addCats(new Cats("Kali", Gender::FEMALE, SHORTHAIR, 1.3));
+    addCats(new Cats("Trin", Gender::FEMALE, MANX, 1.4));
+    addCats(new Cats("Chili", Gender::MALE, SHORTHAIR, 1.5));
 
     printAllCats();
     deleteAllCats();
@@ -52,7 +52,7 @@ int main() {
     //test default values
     Cats testCat = Cats();
 
-    Cats testCat2 = Cats("test", MALE, PERSIAN, 1.0);
+    Cats testCat2 = Cats("test", Gender::MALE, PERSIAN, 1.0);
 
     testCat.print();
 
@@ -62,7 +62,7 @@ int main() {
     testCat.validateName("");
 
     //test validate gender
-    testCat.validateGender(UNKNOWN_GENDER);
+    testCat.validateGender(Gender::UNKNOWN_GENDER);
 
     //test validate breed
     testCat.validateBreed(UNKNOWN_BREED);
@@ -78,30 +78,30 @@ int main() {
     //test validation in addCat
     try {
         printf("addCats validation failure Name: \n");
-        addCats(new Cats("", MALE, PERSIAN, 1.0));
+        addCats(new Cats("", Gender::MALE, PERSIAN, 1.0));
         assert(false);
     } catch (exception const &e) {}
     try {
         printf("addCats validation failure Gender: \n");
-        addCats(new Cats("test", UNKNOWN_GENDER, PERSIAN, 1.0));
+        addCats(new Cats("test", Gender::UNKNOWN_GENDER, PERSIAN, 1.0));
         assert(false);
     } catch (exception const &e) {}
     try {
         printf("addCats validation failure Breed: \n");
-        addCats(new Cats("test", MALE, UNKNOWN_BREED, 1.0));
+        addCats(new Cats("test", Gender::MALE, UNKNOWN_BREED, 1.0));
         assert(false);
     } catch (exception const &e) {}
     try {
         printf("addCats validation failure Weight: \n");
-        addCats(new Cats("test", MALE, PERSIAN, -1.0));
+        addCats(new Cats("test", Gender::MALE, PERSIAN, -1.0));
         assert(false);
     } catch (exception const &e) {}
 
     //test addCats
     printf("adding three test cats to linked list using addCats\n");
-    addCats(new Cats("test", MALE, PERSIAN, 1.0));
-    addCats(new Cats("Milo", MALE, MANX , 1.1));
-    addCats(new Cats("Bella", FEMALE, MAINE_COON, 1.2));
+    addCats(new Cats("test", Gender::MALE, PERSIAN, 1.0));
+    addCats(new Cats("Milo", Gender::MALE, MANX , 1.1));
+    addCats(new Cats("Bella", Gender::FEMALE, MAINE_COON, 1.2));
 
     //test printallcats
     printAllCats();

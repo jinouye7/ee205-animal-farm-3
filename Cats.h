@@ -10,8 +10,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include "config.h"
+#include "Gender.h"
 
-enum Gender { UNKNOWN_GENDER = 0, MALE = 1, FEMALE = 2 };
+//enum Gender { UNKNOWN_GENDER = 0, MALE = 1, FEMALE = 2 };
 
 enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 

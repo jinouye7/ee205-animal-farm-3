@@ -34,7 +34,7 @@ using namespace std ;
 
 void Cats::zeroOutMemberData() {
     memset( name, 0, MAXLENGTH );
-    gender = UNKNOWN_GENDER ;
+    gender = Gender::UNKNOWN_GENDER ;
     breed = UNKNOWN_BREED ;
     isFixed = false ;
     weight = UNKNOWN_WEIGHT ;
@@ -72,7 +72,7 @@ const char *Cats::getName() const noexcept {
 
 ////////////////////    Gender Getter & Setter    ////////////////////////////////////////////////////////
 void Cats::setGender(Gender newGender) {
-    if( gender != UNKNOWN_GENDER ) {
+    if( gender != Gender::UNKNOWN_GENDER ) {
         throw logic_error( PROGRAM_NAME ": The gender is already set" ) ;
     }
 
@@ -146,7 +146,7 @@ bool Cats::validateName(const char *newName) {
 
 /// validate gender ///
 bool Cats::validateGender(const Gender newGender) {
-    if( newGender == UNKNOWN_GENDER ) {
+    if( newGender == Gender::UNKNOWN_GENDER ) {
         cerr  << PROGRAM_NAME << ": Gender must be known"  << endl;
         return false;
     }
@@ -201,7 +201,7 @@ bool Cats::print() const noexcept {
     cout << left ;
     cout << boolalpha ;
     FORMAT_LINE( "Cat", "name" )         << getName()   << endl ;
-    FORMAT_LINE( "Cat", "gender" )       << genderName( getGender() ) << endl ;
+    FORMAT_LINE( "Cat", "gender" )       << getGender() << endl ;
     FORMAT_LINE( "Cat", "breed" )        << breedName( getBreed() )   << endl ;
     FORMAT_LINE( "Cat", "isCatFixed" )      << isCatFixed()   << endl ;
     FORMAT_LINE( "Cat", "weight" )       << getWeight() << endl ;

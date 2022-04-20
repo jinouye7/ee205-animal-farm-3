@@ -8,8 +8,7 @@
 /// @author Jared Inouye <jinouye7@hawaii.edu>
 /// @date   19_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-#ifndef EE205_LAB12A_FATCAT_WEIGHT_H
-#define EE205_LAB12A_FATCAT_WEIGHT_H
+
 //#define UNKNOWN_WEIGHT -1
 
 #include <string>

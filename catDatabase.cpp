@@ -61,7 +61,7 @@ extern bool validateDatabase() {
 ////////////////////////////////////// old code /////////////////////////////////////////////////////
 
 
-
+/*
 //returns string counterpart for gender enum
 char* genderName (const enum Gender gender) {
 
@@ -83,7 +83,7 @@ char* genderName (const enum Gender gender) {
     return strGender;
 
 }
-
+*/
 
 
 //returns string counterpart for breed enum
