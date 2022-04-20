@@ -25,8 +25,8 @@ extern bool validateDatabase();
 
 
 /// Functions that return a string for the name of the gender, color, and cat breeds
-char* genderName (const enum Gender gender);
-char* colorName (const enum Color color);
+//char* genderName (const enum Gender gender);
+//char* colorName (const enum Color color);
 char* breedName (const enum Breed breed);
 // Function to convert a string like " May 4, 2000" to a struct tm
 int birthdayToStruct( const int index, const char *date);

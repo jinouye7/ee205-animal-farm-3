@@ -11,12 +11,13 @@
 #pragma once
 #include "config.h"
 #include "Gender.h"
+#include "Color.h"
 
 //enum Gender { UNKNOWN_GENDER = 0, MALE = 1, FEMALE = 2 };
 
 enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 
-enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
+//enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
 
 

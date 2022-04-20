@@ -46,8 +46,23 @@ int main() {
     printAllCats();
     cout << "Done with Animal Farm 2" << endl;
 
-
 #ifdef DEBUG
+    std::cout << Color::UNKNOWN_COLOR << endl;
+    std::cout << Color::BLACK << endl;
+    std::cout << Color::BROWN << endl;
+    std::cout << Color::WHITE << endl;
+    std::cout << Color::RED << endl;
+    std::cout << Color::BLUE << endl;
+    std::cout << Color::GREEN << endl;
+    std::cout << Color::GINGER << endl;
+    std::cout << Color::CREAM << endl;
+    std::cout << Color::CINNAMON << endl;
+    std::cout << Color::CALICO << endl;
+
+#endif
+
+
+#ifdef DEBUG2
 
     //test default values
     Cats testCat = Cats();

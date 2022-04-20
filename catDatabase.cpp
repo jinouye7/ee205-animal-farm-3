@@ -120,6 +120,7 @@ char* breedName (const enum Breed breed) {
 
 //returns string counterpart for color enum
 
+/*
 char* colorName (const enum Color color) {
 
     char* strColor;
@@ -149,4 +150,4 @@ char* colorName (const enum Color color) {
     return strColor;
 }
 
-
+*/
