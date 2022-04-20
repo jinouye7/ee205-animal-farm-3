@@ -12,7 +12,7 @@
 #include "config.h"
 
 class Node {
-    //friend class 	List;
+    friend class 	List;
     //friend class 	SinglyLinkedList;
 
     ///////////////////////////// public member functions//////////////////
