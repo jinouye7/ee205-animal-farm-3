@@ -41,3 +41,33 @@ Node* List::get_first() const noexcept {
 }
 
 
+//Remove and return the first Node in the list
+
+Node* List::pop_front() noexcept {
+
+    if (head == nullptr) {
+        return nullptr;
+    }
+
+    Node* temp = head;
+    head = head -> next;
+    count--;
+    return temp;
+
+}
+
+// returns true if the node is in the list
+bool List::isIn(Node* aNode) const {
+    Node* currentNode = head;
+
+    while (currentNode != nullptr) {
+        if (aNode == currentNode) {
+            return true;
+        }
+        currentNode = currentNode -> next;
+    }
+
+    return false;
+}
+
+

@@ -38,7 +38,7 @@ public:  ////////////////////////// Abstract Methods ///////////////////////////
     virtual bool validate() const noexcept = 0;  ///< Check to see if the container is valid
 };
 
-};
+
 
 
 
