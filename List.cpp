@@ -43,18 +43,7 @@ Node* List::get_first() const noexcept {
 
 //Remove and return the first Node in the list
 
-Node* List::pop_front() noexcept {
 
-    if (head == nullptr) {
-        return nullptr;
-    }
-
-    Node* temp = head;
-    head = head -> next;
-    count--;
-    return temp;
-
-}
 
 // returns true if the node is in the list
 bool List::isIn(Node* aNode) const {
@@ -78,28 +67,10 @@ bool List::validate() const noexcept {
         assert(size() != 0);
     }
 
-    // count forward through the list
-    unsigned int forwardCount = 0;
-    Node* currentNode = head;
-    while (currentNode != nullptr) {
-        forwardCount++;
-        currentNode = currentNode -> next;
-    }
-    //cout << forwardCount << endl;
-    assert(size() == forwardCount);
-
     return true;
 }
 
-//output the contents of the container
-void List::dump() const noexcept{
-    Node* currentNode = head;
-    while (currentNode != nullptr){
-        currentNode->dump();
-        currentNode = currentNode -> next;
-    }
 
-}
 
 //delete all nodes in the list
 void List::deleteAllNodes() noexcept{

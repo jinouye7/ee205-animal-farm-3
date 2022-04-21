@@ -8,12 +8,13 @@
 /// @author Jared Inouye <jinouye7@hawaii.edu>
 /// @date   19_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
 #include <iostream>
 #include "config.h"
 
 class Node {
     friend class 	List;
-    //friend class 	SinglyLinkedList;
+    friend class 	SinglyLinkedList;
 
     ///////////////////////////// public member functions//////////////////
 public:
