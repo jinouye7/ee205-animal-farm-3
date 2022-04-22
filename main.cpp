@@ -20,6 +20,7 @@
 #include "reportCats.h"
 #include "deleteCats.h"
 #include "Cats.h"
+#include "SinglyLinkedList.h"
 #include "config.h"
 #define DEBUG
 #define MAX_NAME "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx"
@@ -65,6 +66,24 @@ int main() {
     testnode1.dump();
     testnode2.dump();
     std::cout << testnode1.operator>(testnode2) << endl;
+
+    std::cout<<"testing SinglyLinkedList"<<endl;
+
+    SinglyLinkedList testList1;
+
+    testList1.push_front(&testnode1);
+    testList1.push_front(&testnode2);
+    testList1.push_front(new Node);
+    testList1.push_front(new Node);
+    testList1.insert_after(&testnode1, new Node);
+
+    testList1.dump();
+
+    std::cout<<"testing popfront"<<endl;
+
+    testList1.pop_front();
+    testList1.dump();
+
 
 
 #endif
