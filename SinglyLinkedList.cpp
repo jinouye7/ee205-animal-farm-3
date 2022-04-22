@@ -20,8 +20,10 @@ SinglyLinkedList::SinglyLinkedList() {
 
 //check to see if the container is valid
 bool SinglyLinkedList::validate() const noexcept {
-   ///@todo if this returns false, return false now
-    List::validate();
+
+    if(!List::validate()){
+        return false;
+    }
 
     // count forward through the list
     unsigned int forwardCount = 0;
@@ -37,7 +39,7 @@ bool SinglyLinkedList::validate() const noexcept {
     return true;
 }
 
-
+//remove and return first Node in the List
 Node* SinglyLinkedList::pop_front() noexcept {
 
     if (head == nullptr) {
@@ -47,7 +49,61 @@ Node* SinglyLinkedList::pop_front() noexcept {
     Node* temp = head;
     head = head -> next;
     count--;
+    SinglyLinkedList::validate();
     return temp;
+
+}
+
+//insert newNode to the beginning of the list
+void SinglyLinkedList::push_front(Node* newNode) {
+    if (newNode == nullptr) {
+        return;
+    }
+
+    if (head != nullptr) {
+        newNode -> next = head;
+        head = newNode;
+    } else {
+        newNode -> next = nullptr;
+        head = newNode;
+    }
+    count++;
+    SinglyLinkedList::validate();
+}
+
+
+//insert newNode after the currentNode
+void SinglyLinkedList::insert_after(Node* currentNode, Node* newNode) {
+    if(List::empty()){
+        throw std::logic_error(PROGRAM_NAME ": List is empty. Cannot insert after");
+    }
+    if (currentNode == nullptr) {
+        throw std::invalid_argument(PROGRAM_NAME ": Cannot insert newNode after nullptr");
+    }
+
+    if (newNode == nullptr) {
+        throw std::invalid_argument(PROGRAM_NAME ": newNode cannot be nullptr");
+    }
+    // checking if the nodes are in the list
+    if(!isIn(currentNode)){
+        throw std::logic_error( PROGRAM_NAME ": currentNode not in the list");
+    }
+    if(isIn(newNode)){
+        throw std::logic_error( PROGRAM_NAME " newNode is already in the list");
+    }
+    //validate new node
+    if(!newNode->validate()){
+        throw std::domain_error( PROGRAM_NAME " newNode is not valid");
+    }
+
+    //insert newNode after currentNode
+        newNode -> next = currentNode -> next;
+        currentNode -> next = newNode;
+
+        count++;
+
+        SinglyLinkedList::validate();
+
 
 }
 
@@ -60,3 +116,4 @@ void SinglyLinkedList::dump() const noexcept{
     }
 
 }
+

@@ -17,8 +17,7 @@
 ///
 class SinglyLinkedList : public List {
 public:  ///////////////////////// Public Constructors /////////////////////////
-    SinglyLinkedList();
-    ///< Make a new SinglyLinkedList
+    SinglyLinkedList();   ///< Make a new SinglyLinkedList
 
 public:  /////////////////////////// Public Methods ////////////////////////////
     void  push_front( Node* newNode ) ;  ///< Insert `newNode` to the beginning of the List
