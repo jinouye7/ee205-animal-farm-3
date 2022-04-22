@@ -15,11 +15,13 @@
 #include <ostream>
 
 
+
 class Weight {
 
 public:
 //////////////////////////////public types ///////////////////////////////////
     enum UnitOfWeight { POUND , KILO , SLUG };
+    typedef float t_weight;
 
 /////////////////////////////public member functions //////////////////////////
 

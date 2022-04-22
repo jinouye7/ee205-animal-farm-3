@@ -47,7 +47,7 @@ Cats::Cats() {
 }
 
 /// constructor with bare minimum for valid cat
-Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) : Cats() {
+Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const float newWeight) : Cats() {
     setName( newName ) ;
     setGender( newGender ) ;
     setBreed( newBreed ) ;
@@ -114,11 +114,11 @@ bool Cats::isCatFixed() const noexcept {
 
 ////////////////////    Weight Getter & Setter    ////////////////////////////////////////////////////////
 
-Weight Cats::getWeight() const noexcept {
+float Cats::getWeight() const noexcept {
     return weight;
 }
 
-void Cats::setWeight(Weight newWeight) {
+void Cats::setWeight(float newWeight) {
     Cats::weight = newWeight;
 }
 
@@ -165,7 +165,7 @@ bool Cats::validateBreed(const Breed newBreed) {
 }
 
 /// validate weight ///
-bool Cats::validateWeight(const Weight newWeight) {
+bool Cats::validateWeight(const float newWeight) {
     if( newWeight <= 0 ) {
         cerr  << PROGRAM_NAME << ": Weight must be > 0"  << endl;
         return false;

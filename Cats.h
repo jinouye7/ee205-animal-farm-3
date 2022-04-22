@@ -31,7 +31,7 @@ protected:
     enum Gender gender;
     enum Breed breed;
     bool isFixed;
-    Weight weight;
+    float weight;
 
 public:  /// Public Member Variables
     Cats* next; ///next pointer for linked list
@@ -43,7 +43,7 @@ public:   /// Constructors
     Cats();  /// create cat with default values
 
     ///create a valid cat
-    Cats(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight);
+    Cats(const char *newName, const Gender newGender, const Breed newBreed, const float newWeight);
 
 
 public: /// Getters and Setters
@@ -53,8 +53,8 @@ public: /// Getters and Setters
     Breed getBreed() const noexcept ;    /// Get the Cat's breed
     bool isCatFixed() const noexcept ;      /// Return true if the cat is fixed
     void fixCat() noexcept ;             /// Spay or neuter the cat
-    Weight getWeight() const noexcept ;  /// The weight of the cat or -1 if unknown
-    void setWeight(Weight newWeight) ;   /// Set the newWeight of the cat
+    float getWeight() const noexcept ;  /// The weight of the cat or -1 if unknown
+    void setWeight(float newWeight) ;   /// Set the newWeight of the cat
 
 protected: ///Protected Methods (setters for gender and breed)
 public:
@@ -69,7 +69,7 @@ public: /// Static Public Methods
     static bool validateName( const char* newName ) ;  /// Check if `newName` is valid
     static bool validateGender( const Gender newGender ) ; /// Check if `newGender` is valid
     static bool validateBreed( const Breed newBreed ) ; /// Check if 'newBreed` is valid
-    static bool validateWeight( const Weight newWeight ) ; /// Check if `newWeight` is valid
+    static bool validateWeight( const float newWeight ) ; /// Check if `newWeight` is valid
 
 
 };

@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_10d_animal_farm_2 - EE 205 - Spr 2022
+/// @brief  ee205_animal-farm-3 - EE 205 - Spr 2022
 ///
 /// @file main.cpp
 /// @version 1.0
