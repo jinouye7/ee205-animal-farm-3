@@ -18,7 +18,23 @@
 //constant name of kingdom
 const std::string Animal::KINGDOM_NAME = "Animalia";
 
-// setters //
+//////////////////////////////// setters //////////////////////////////////////
+///weight///
+void    Animal::setWeight (const Weight::t_weight newWeight){
+    weight.setWeight(newWeight);
+};
+
+///gender///
+void Animal::setGender(const Gender newGender) {
+    if( gender != Gender::UNKNOWN_GENDER ) {
+        throw std::logic_error( PROGRAM_NAME ": The gender is already set" ) ;
+    }
+
+    // At this point, the gender must be UNKNOWN_GENDER
+    Animal::gender = newGender ;
+}
+
+///////////////////////////// getters ////////////////////////////////////////
 
 
 

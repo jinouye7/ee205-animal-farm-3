@@ -9,6 +9,7 @@
 /// @date   31_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
+#include <string>
 #include "config.h"
 #include "Gender.h"
 #include "Color.h"
@@ -70,6 +71,9 @@ public: /// Static Public Methods
     static bool validateGender( const Gender newGender ) ; /// Check if `newGender` is valid
     static bool validateBreed( const Breed newBreed ) ; /// Check if 'newBreed` is valid
     static bool validateWeight( const float newWeight ) ; /// Check if `newWeight` is valid
+
+    /// static public attributes
+    static const std::string 	SPECIES_NAME;
 
 
 };
