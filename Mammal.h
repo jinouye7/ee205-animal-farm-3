@@ -13,7 +13,7 @@
 #include "Animal.h"
 #include "Color.h"
 
-/*
+
 /// Mammals have more fun
 class Mammal : public Animal {
 public:   //////////////////////// Constants ///////////////////////////////////
@@ -46,4 +46,3 @@ public:  ////////////////////////// Getters & Setters //////////////////////////
 public:  /////////////////////////// Public Methods ////////////////////////////
     void dump() const noexcept override;  ///< Print the contents of this object (and its parents)
 };
- */

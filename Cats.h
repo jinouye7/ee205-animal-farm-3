@@ -14,18 +14,17 @@
 #include "Gender.h"
 #include "Color.h"
 #include "Node.h"
+#include "Mammal.h""
 
-//enum Gender { UNKNOWN_GENDER = 0, MALE = 1, FEMALE = 2 };
 
 enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 
-//enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
 
 
 /// declaring a Cat class
 
-class Cats {
+class Cats : public Mammal {
 protected:
     /// Member Variables
     char name[MAXLENGTH];

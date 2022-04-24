@@ -9,3 +9,11 @@
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "Mammal.h"
+
+
+void Mammal::dump() const noexcept{
+    Animal::dump();
+    FORMAT_LINE_FOR_DUMP( "Mammal", "color" ) << getColor() << std::endl ;
+}
+
+const std::string Mammal:: MAMMAL_NAME = "Mammilian";
