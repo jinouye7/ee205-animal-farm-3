@@ -43,7 +43,7 @@ public:   /////////////////////// Constructors ////////////////////////////////
     );
 
     /// Create an Animal, populating *all* of the member variables
-    Animal( const Gender           newGender
+   Animal( const Gender           newGender
             ,const Weight::t_weight newWeight
             ,const Weight::t_weight newMaxWeight
             ,const std::string&     newClassification
@@ -72,6 +72,7 @@ public:   ////////////////////// Abstract Methods //////////////////////////////
     virtual std::string speak() const noexcept = 0;  ///< Ask the Animal to say something.  This method is virtual and abstract.
 
 public:   ////////////////////////// Methods //////////////////////////////////
+    ///note: virtual functions from node class
     void dump() const noexcept override;       ///< Output the contents of this object
     bool validate() const noexcept override;   ///< Check to see if the Animal object is valid
 };

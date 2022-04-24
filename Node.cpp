@@ -30,6 +30,7 @@ bool Node::operator>(const Node& rightSide) {
 }
 
 void Node::dump() const {
+   PRINT_HEADING_FOR_DUMP;
    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl ;
    FORMAT_LINE_FOR_DUMP( "Node", "next" ) << next << std::endl ;
 

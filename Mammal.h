@@ -13,7 +13,7 @@
 #include "Animal.h"
 #include "Color.h"
 
-
+/*
 /// Mammals have more fun
 class Mammal : public Animal {
 public:   //////////////////////// Constants ///////////////////////////////////
@@ -29,7 +29,7 @@ public:   /////////////////////// Constructors ////////////////////////////////
     ) : Animal( newMaxWeight, MAMMAL_NAME, newSpecies ) {};
 
     /// Create a Mammal, populating *all* of the member variables
-    Mammal( const Color            newColor
+   Mammal( const Color            newColor
             ,const Gender           newGender
             ,const Weight::t_weight newWeight
             ,const Weight::t_weight newMaxWeight
@@ -38,6 +38,7 @@ public:   /////////////////////// Constructors ////////////////////////////////
         setColor( newColor );
     };
 
+
 public:  ////////////////////////// Getters & Setters //////////////////////////
     Color getColor() const noexcept { return color; }  ///< Get the color
     void setColor( const Color newColor ) noexcept { color = newColor; }  ///< Set the color
@@ -45,3 +46,4 @@ public:  ////////////////////////// Getters & Setters //////////////////////////
 public:  /////////////////////////// Public Methods ////////////////////////////
     void dump() const noexcept override;  ///< Print the contents of this object (and its parents)
 };
+ */

@@ -15,6 +15,8 @@
 #include <stdbool.h>
 #include <iostream>
 #include <exception>
+#include "Animal.h"
+#include "Gender.h"
 #include "catDatabase.h"
 #include "addCats.h"
 #include "reportCats.h"
@@ -83,6 +85,10 @@ int main() {
 
     testList1.pop_front();
     testList1.dump();
+
+
+    //Animal(Gender::MALE, 30, 40, "Mammalia", "Cat");
+
 
 
 

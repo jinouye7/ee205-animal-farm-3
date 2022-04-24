@@ -120,9 +120,10 @@ public:
     const std::string 	KILO_LABEL = "Kilo";
     const std::string 	SLUG_LABEL = "Slug";
     */
-private:
-//////////////////////////////Private Member Functions //////////////////////
+/////////////Private Member Functions (changed to public for now) //////////
     void setMaxWeight(float newMaxWeight);
+
+private:
 
 
 //////////////////////////////private attributes//////////////////////////////
