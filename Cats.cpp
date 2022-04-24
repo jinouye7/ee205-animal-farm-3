@@ -31,21 +31,26 @@
 
 
 using namespace std ;
+const std::string Cats::SPECIES_NAME = "Cat";  ///< The scientific name for this species
+const Weight::t_weight Cats::MAX_WEIGHT = 40;
 
+/*
 void Cats::zeroOutMemberData() {
     memset( name, 0, MAXLENGTH );
-    gender = Gender::UNKNOWN_GENDER ;
-    breed = UNKNOWN_BREED ;
+    Mammal::gender = Gender::UNKNOWN_GENDER ;
+    //breed = UNKNOWN_BREED ;
     isFixed = false ;
-    weight = UNKNOWN_WEIGHT ;
+    //weight = UNKNOWN_WEIGHT ;
     next = nullptr ;
 }
+ */
 
 /// constuctor with no parameters (all default values)
-Cats::Cats() {
+/*Cats::Cats() {
     zeroOutMemberData() ;
-}
 
+}
+*/
 /// constructor with bare minimum for valid cat
 Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const float newWeight) : Cats() {
     setName( newName ) ;
@@ -86,7 +91,7 @@ Gender Cats::getGender() const noexcept {
 
 
 ////////////////////    Breed Getter & Setter    ////////////////////////////////////////////////////////
-
+/*
 void Cats::setBreed(Breed newBreed) {
     if( breed != UNKNOWN_BREED ) {
         throw logic_error( PROGRAM_NAME ": The breed is already set, you can't change it" ) ;
@@ -98,7 +103,7 @@ void Cats::setBreed(Breed newBreed) {
 Breed Cats::getBreed() const noexcept {
     return breed;
 }
-
+*/
 ////////////////////    isFixed Getter & Setter    ////////////////////////////////////////////////////////
 
 //// setter to fix cat
@@ -125,19 +130,9 @@ void Cats::setWeight(float newWeight) {
 ////////////////////    Validation    ///////////////////////////////////////////////////////////////////
 
 /// validate name ///
-bool Cats::validateName(const char *newName) {
-    if( newName == nullptr ) {
-        cerr  << PROGRAM_NAME << ": name must not be NULL"  << endl;
-        return false;
-    }
-
-    if( strlen( newName ) <= 0 ) {
-        cerr  << PROGRAM_NAME << ": name must be > 0"  << endl;
-        return false;
-    }
-
-    if( strlen( newName ) >= MAXLENGTH ) {
-        cerr  << PROGRAM_NAME << ": name must be < MAX_CAT_NAME"  << endl;
+bool Cats::validateName(const std::string& newName) {
+    if( newName.empty() ) {
+        cerr  << PROGRAM_NAME << ": name must not be empty"  << endl;
         return false;
     }
 

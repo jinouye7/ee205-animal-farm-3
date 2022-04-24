@@ -14,7 +14,7 @@
 #include "Gender.h"
 #include "Color.h"
 #include "Node.h"
-#include "Mammal.h""
+#include "Mammal.h"
 
 
 enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
@@ -25,22 +25,35 @@ enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 /// declaring a Cat class
 
 class Cats : public Mammal {
+public:/// Constants
+    static const std::string      SPECIES_NAME;  ///< The scientific name for this species
+    static const Weight::t_weight MAX_WEIGHT;
 protected:
-    /// Member Variables
-    char name[MAXLENGTH];
-    enum Gender gender;
-    enum Breed breed;
+    /// Member Variables\
+    /// @todo change to std
+    std::string name;
+    //enum Gender gender;
+    //enum Breed breed;
     bool isFixed;
-    float weight;
+    //float weight;
 
 public:  /// Public Member Variables
     Cats* next; ///next pointer for linked list
 
-private:  /// Private Methods
-    void zeroOutMemberData();  ///zero out member data
-
 public:   /// Constructors
-    Cats();  /// create cat with default values
+   // Cats();  /// create cat with default values
+   /// Create a Cat with the minimum fields necessary to have a valid Cat
+   /// @todo Why can't this be defined in the .cpp file??
+   explicit Cats( const std::string& newName ) : Mammal( MAX_WEIGHT, SPECIES_NAME ) {
+       if( !validateName( newName) ) {
+           /// @throws out_of_range If the Cat doesn't have a name
+           throw std::out_of_range( "Cats must have a name" );
+       }
+       name = newName;
+       isFixed = false;
+
+       Cats::validate();
+   }
 
     ///create a valid cat
     Cats(const char *newName, const Gender newGender, const Breed newBreed, const float newWeight);
@@ -66,14 +79,11 @@ public: /// Public Methods
     bool validate() const noexcept; ///check to see if the Cat object is valid
 
 public: /// Static Public Methods
-    static bool validateName( const char* newName ) ;  /// Check if `newName` is valid
+    static bool validateName( const std::string &newName ) ;  /// Check if `newName` is valid
     static bool validateGender( const Gender newGender ) ; /// Check if `newGender` is valid
     static bool validateBreed( const Breed newBreed ) ; /// Check if 'newBreed` is valid
     static bool validateWeight( const float newWeight ) ; /// Check if `newWeight` is valid
 
-    /// static public attributes
-    static const std::string 	SPECIES_NAME;
-
-
+=
 };
 

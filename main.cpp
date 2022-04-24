@@ -35,7 +35,7 @@ using namespace std ;
 
 int main() {
 
-    cout << "Starting Animal Farm 2" << endl;
+   /* cout << "Starting Animal Farm 2" << endl;
 
     addCats(new Cats("Loki", Gender::MALE, PERSIAN, 1.0));
     addCats(new Cats("Milo", Gender::MALE, MANX, 1.1));
@@ -48,7 +48,7 @@ int main() {
     deleteAllCats();
     printAllCats();
     cout << "Done with Animal Farm 2" << endl;
-
+*/
 #ifdef DEBUG
     std::cout << Color::UNKNOWN_COLOR << endl;
     std::cout << Color::BLACK << endl;
