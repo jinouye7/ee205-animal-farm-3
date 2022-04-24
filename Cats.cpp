@@ -31,7 +31,7 @@
 
 
 using namespace std ;
-const std::string Cats::SPECIES_NAME = "Cat";  ///< The scientific name for this species
+const std::string Cats::SPECIES_NAME = "Felis Catus";  ///< The scientific name for this species
 const Weight::t_weight Cats::MAX_WEIGHT = 40;
 
 /*
@@ -204,5 +204,7 @@ bool Cats::print() const noexcept {
     return true ;
 }
 
-
+const string Cats::speak() {
+    return string( "Meow" );
+}
 
