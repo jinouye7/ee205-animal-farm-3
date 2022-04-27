@@ -64,13 +64,13 @@ Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, co
 
 /////////////////// Name Getter & Setter  ////////////////////////////////////////////////////////////////
 
-void Cats::setName(const char *newName) {
+void Cats::setName(const std::string& newName) {
 
-    memset( name, 0, MAXLENGTH );  /// erase the old name
-    strcpy( name, newName );  /// sets new name
+ name = newName;
+
 }
 
-const char *Cats::getName() const noexcept {
+std::string Cats::getName() const noexcept {
     return name;
 }
 

@@ -60,8 +60,8 @@ public:   /// Constructors
 
 
 public: /// Getters and Setters
-    const char *getName() const noexcept ; /// Get the Cat's name
-    void setName( const char* newName );   /// Set the Cat's name
+    std::string getName() const noexcept ; /// Get the Cat's name
+    void setName( const std::string& newName );   /// Set the Cat's name
     Gender getGender() const noexcept ;  /// Get the Cat's gender
     Breed getBreed() const noexcept ;    /// Get the Cat's breed
     bool isCatFixed() const noexcept ;      /// Return true if the cat is fixed
