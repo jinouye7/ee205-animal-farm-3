@@ -17,10 +17,6 @@
 #include <exception>
 #include "Animal.h"
 #include "Gender.h"
-#include "catDatabase.h"
-#include "addCats.h"
-#include "reportCats.h"
-#include "deleteCats.h"
 #include "Cats.h"
 #include "SinglyLinkedList.h"
 #include "config.h"

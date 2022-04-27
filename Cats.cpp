@@ -22,7 +22,6 @@
 #include <cassert>
 
 #include "config.h"
-#include "catDatabase.h"
 #include "Cats.h"
 
 
