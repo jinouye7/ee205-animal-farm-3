@@ -226,10 +226,12 @@ bool Weight::hasMaxWeight() const noexcept {
 bool Weight::isWeightValid (float checkWeight) const noexcept{
     if(bHasMax){
         if(checkWeight > maxWeight) {
+            std:: cout <<"weight cannot be greater than max [" << maxWeight << " " << getUnitOfWeight() << "]" << std::endl;
             return false;
         }
     }
     if(checkWeight <= 0){
+        std:: cout << "known weight cannot be <=0" << std::endl;
         return false;
     }
     return true;

@@ -6,10 +6,11 @@
 /// @version 1.0
 ///
 /// @author Jared Inouye <jinouye7@hawaii.edu>
-/// @date   31_Mar_2022
+/// @date   16_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include <string>
+#include <cassert>
 #include "config.h"
 #include "Gender.h"
 #include "Color.h"
@@ -50,7 +51,7 @@ public:   /// Constructors
        name = newName;
        isFixed = false;
 
-       Cats::validate();
+       assert(Cats::validate());
    }
 
     ///create a valid cat
@@ -67,7 +68,8 @@ public:   /// Constructors
         name = newName;
         isFixed = newIsFixed;
 
-        Cats::validate();
+        assert(Cats::validate());
+        std::cout << "cat added " << std::endl;
     }
 
 

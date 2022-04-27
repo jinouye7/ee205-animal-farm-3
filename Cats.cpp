@@ -1,12 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_10d_animal_farm_1_to_clion - EE 205 - Spr 2022
+/// @brief  ee205_animal-farm-3 - EE 205 - Spr 2022
 ///
 /// @file Cats.cpp
 /// @version 1.0
 ///
 /// @author Jared Inouye <jinouye7@hawaii.edu>
-/// @date   31_Mar_2022
+/// @date   26_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "Cats.h"
 #include <stdexcept>
@@ -75,37 +75,6 @@ bool Cats::validateName(const std::string& newName) {
     return true;
 }
 
-/*
-/// validate gender ///
-bool Cats::validateGender(const Gender newGender) {
-    if( newGender == Gender::UNKNOWN_GENDER ) {
-        cerr  << PROGRAM_NAME << ": Gender must be known"  << endl;
-        return false;
-    }
-
-    return true;
-}
-
-/// validate Breed ///
-bool Cats::validateBreed(const Breed newBreed) {
-    if( newBreed == UNKNOWN_BREED ) {
-        cerr  << PROGRAM_NAME << ": Breed must be known"  << endl;
-        return false;
-    }
-
-    return true;
-}
-
-/// validate weight ///
-bool Cats::validateWeight(const float newWeight) {
-    if( newWeight <= 0 ) {
-        cerr  << PROGRAM_NAME << ": Weight must be > 0"  << endl;
-        return false;
-    }
-
-    return true;
-}
-*/
 
 /// validate cat ///
 
