@@ -190,6 +190,7 @@ void Cats::dump() const noexcept{
 
     Mammal::dump();
     FORMAT_LINE_FOR_DUMP( "Cat", "name" ) << getName() << std::endl ;
+    FORMAT_LINE_FOR_DUMP( "Cat", "isFixed" ) << isCatFixed() << std::endl ;
 /*
     cout << setw(80) << setfill( '=' ) << "" << endl ;
     cout << setfill( ' ' ) ;

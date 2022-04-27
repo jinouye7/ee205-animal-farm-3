@@ -278,9 +278,9 @@ void Weight::dump()	const{
 /////////////////////////// Stream Output Operator ///////////////////////////////
 std::ostream &operator<<(std::ostream &os, const Weight::UnitOfWeight originalStream) {
     switch( originalStream ) {
-        case Weight::POUND: return os << "Pound" ;
-        case Weight::KILO: return os << "Kilo" ;
-        case Weight::SLUG: return os << "Slug" ;
+        case Weight::POUND: return os << "Pounds" ;
+        case Weight::KILO: return os << "Kilos" ;
+        case Weight::SLUG: return os << "Slugs" ;
         default:
             throw std::out_of_range( "The unit can’t be mapped to a string" );
     }

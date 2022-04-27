@@ -18,7 +18,7 @@
                                                           << std::boolalpha  /* Print `true` or `false` for `bool`s */ \
                                                           << std::setw( 8) << (className)             \
                                                           << std::setw(20) << (member)                \
-                                                          << std::setw(52)  /* (data) */
+                                                          //<< std::setw(52)  /* (data) */
 
 #define PRINT_HEADING_FOR_DUMP std::cout << std::setw(80) << std::setfill( '=' ) << "" << std::endl
 

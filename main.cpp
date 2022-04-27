@@ -31,20 +31,26 @@ using namespace std ;
 
 int main() {
 
-   /* cout << "Starting Animal Farm 2" << endl;
+    cout << "Starting " << PROGRAM_TITLE << endl ;
+    SinglyLinkedList catDB ;
+    catDB.push_front( new Cats( "Loki", Color::CREAM, true, Gender::MALE, 1.0 ) ) ;
+    catDB.push_front( new Cats( "Milo", Color::BLACK, true, Gender::MALE, 1.1 ) ) ;
+    catDB.push_front( new Cats( "Bella", Color::BROWN, true, Gender::FEMALE, 1.2 ) ) ;
+    catDB.push_front( new Cats( "Kali", Color::CALICO, true, Gender::FEMALE, 1.3 ) ) ;
+    catDB.push_front( new Cats( "Trin", Color::WHITE, true, Gender::FEMALE, 1.4 ) ) ;
+    catDB.insert_after(catDB.get_first(), new Cats( "Chili", Color::GINGER, true,
+                                                   Gender::MALE, 1.5 ) );
+    for( Animal* pAnimal = (Animal*)catDB.get_first() ; pAnimal != nullptr ; pAnimal =
+                                                                                     (Animal*)List::get_next( (Node*)pAnimal ) ) {
+        cout << pAnimal->speak() << endl;
+    }
+    catDB.validate() ;
+    catDB.dump() ;
+    catDB.deleteAllNodes() ;
+    catDB.dump() ;
+    cout << "Done with " << PROGRAM_TITLE ;
+    return( EXIT_SUCCESS ) ;
 
-    addCats(new Cats("Loki", Gender::MALE, PERSIAN, 1.0));
-    addCats(new Cats("Milo", Gender::MALE, MANX, 1.1));
-    addCats(new Cats("Bella", Gender::FEMALE, MAINE_COON, 1.2));
-    addCats(new Cats("Kali", Gender::FEMALE, SHORTHAIR, 1.3));
-    addCats(new Cats("Trin", Gender::FEMALE, MANX, 1.4));
-    addCats(new Cats("Chili", Gender::MALE, SHORTHAIR, 1.5));
-
-    printAllCats();
-    deleteAllCats();
-    printAllCats();
-    cout << "Done with Animal Farm 2" << endl;
-*/
 #ifdef DEBUG
     std::cout << Color::UNKNOWN_COLOR << endl;
     std::cout << Color::BLACK << endl;

@@ -81,4 +81,5 @@ void List::deleteAllNodes() noexcept{
         currentNode = currentNode -> next;
     }
     validate();
+    std::cout << "List:  " << "head = [" << head << "]" <<std::endl;
 }

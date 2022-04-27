@@ -16,6 +16,7 @@
 //make a new singly linked list
 SinglyLinkedList::SinglyLinkedList() {
     assert( SinglyLinkedList::validate() );
+    std::cout << "Singly Linked List:  " << "head = [" << head << "]" <<std::endl;
 }
 
 //check to see if the container is valid
