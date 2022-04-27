@@ -9,58 +9,23 @@
 /// @date   31_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "Cats.h"
-#include<memory.h>
-#include<stdio.h>
-#include<time.h>
-#include <stdbool.h>
-
-
-#include <cstring>
 #include <stdexcept>
 #include <iostream>
 #include <iomanip>
-#include <cassert>
+
 
 #include "config.h"
-#include "Cats.h"
+
 
 
 /// Format a line for printing the members of a class
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 
-// using namespace std ;
+/////////////////// Constants  ///////////////////////////////////////////////////////////////////////////
 const std::string Cats::SPECIES_NAME = "Felis Catus";  ///< The scientific name for this species
 const Weight::t_weight Cats::MAX_WEIGHT = 40;
 
-/*
-void Cats::zeroOutMemberData() {
-    memset( name, 0, MAXLENGTH );
-    Mammal::gender = Gender::UNKNOWN_GENDER ;
-    //breed = UNKNOWN_BREED ;
-    isFixed = false ;
-    //weight = UNKNOWN_WEIGHT ;
-    next = nullptr ;
-}
- */
-
-/// constuctor with no parameters (all default values)
-/*Cats::Cats() {
-    zeroOutMemberData() ;
-
-}
-*/
-/// constructor with bare minimum for valid cat
-/*
-Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const float newWeight) : Cats() {
-    setName( newName ) ;
-    setGender( newGender ) ;
-    setBreed( newBreed ) ;
-    setWeight( newWeight ) ;
-
-    /// @todo assert( validate() ) ;
-}
-*/
 
 /////////////////// Name Getter & Setter  ////////////////////////////////////////////////////////////////
 
@@ -75,37 +40,6 @@ std::string Cats::getName() const noexcept {
 }
 
 
-////////////////////    Gender Getter & Setter    ////////////////////////////////////////////////////////
-/*
-void Cats::setGender(Gender newGender) {
-    if( gender != Gender::UNKNOWN_GENDER ) {
-        throw logic_error( PROGRAM_NAME ": The gender is already set" ) ;
-    }
-
-    // At this point, the gender must be UNKNOWN_GENDER
-    Cats::gender = newGender ;
-}
-
-Gender Cats::getGender() const noexcept {
-    return gender;
-}
-
-*/
-
-////////////////////    Breed Getter & Setter    ////////////////////////////////////////////////////////
-/*
-void Cats::setBreed(Breed newBreed) {
-    if( breed != UNKNOWN_BREED ) {
-        throw logic_error( PROGRAM_NAME ": The breed is already set, you can't change it" ) ;
-    }
-    // breed is unknown so we can set the breed
-    Cats::breed = newBreed;
-}
-
-Breed Cats::getBreed() const noexcept {
-    return breed;
-}
-*/
 ////////////////////    isFixed Getter & Setter    ////////////////////////////////////////////////////////
 
 //// setter to fix cat
