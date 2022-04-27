@@ -30,7 +30,7 @@
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 
-using namespace std ;
+// using namespace std ;
 const std::string Cats::SPECIES_NAME = "Felis Catus";  ///< The scientific name for this species
 const Weight::t_weight Cats::MAX_WEIGHT = 40;
 
@@ -52,6 +52,7 @@ void Cats::zeroOutMemberData() {
 }
 */
 /// constructor with bare minimum for valid cat
+/*
 Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, const float newWeight) : Cats() {
     setName( newName ) ;
     setGender( newGender ) ;
@@ -60,7 +61,7 @@ Cats::Cats(const char *newName, const Gender newGender, const Breed newBreed, co
 
     /// @todo assert( validate() ) ;
 }
-
+*/
 
 /////////////////// Name Getter & Setter  ////////////////////////////////////////////////////////////////
 
@@ -76,6 +77,7 @@ std::string Cats::getName() const noexcept {
 
 
 ////////////////////    Gender Getter & Setter    ////////////////////////////////////////////////////////
+/*
 void Cats::setGender(Gender newGender) {
     if( gender != Gender::UNKNOWN_GENDER ) {
         throw logic_error( PROGRAM_NAME ": The gender is already set" ) ;
@@ -89,6 +91,7 @@ Gender Cats::getGender() const noexcept {
     return gender;
 }
 
+*/
 
 ////////////////////    Breed Getter & Setter    ////////////////////////////////////////////////////////
 /*
@@ -118,7 +121,7 @@ bool Cats::isCatFixed() const noexcept {
 }
 
 ////////////////////    Weight Getter & Setter    ////////////////////////////////////////////////////////
-
+/*
 float Cats::getWeight() const noexcept {
     return weight;
 }
@@ -126,19 +129,20 @@ float Cats::getWeight() const noexcept {
 void Cats::setWeight(float newWeight) {
     Cats::weight = newWeight;
 }
-
+*/
 ////////////////////    Validation    ///////////////////////////////////////////////////////////////////
 
 /// validate name ///
 bool Cats::validateName(const std::string& newName) {
     if( newName.empty() ) {
-        cerr  << PROGRAM_NAME << ": name must not be empty"  << endl;
+        std::cerr  << PROGRAM_NAME << ": name must not be empty"  << std::endl;
         return false;
     }
 
     return true;
 }
 
+/*
 /// validate gender ///
 bool Cats::validateGender(const Gender newGender) {
     if( newGender == Gender::UNKNOWN_GENDER ) {
@@ -168,29 +172,26 @@ bool Cats::validateWeight(const float newWeight) {
 
     return true;
 }
-
+*/
 
 /// validate cat ///
 
 bool Cats::validate() const noexcept {
-    if (validateName( name ) == false) {
+    if (validateName( Cats::getName() ) == false) {
         return false;
     }
-    if (validateGender( gender ) == false) {
-        return false;
-    }
-    if (validateBreed( breed ) == false ) {
-        return false;
-    }
-    if (validateWeight( weight ) == false ) {
+    if (Animal::validate() == false) {
         return false;
     }
     return true;
 }
 /////////////////////////////// print   ////////////////////////////////////////////////////////////////////
-bool Cats::print() const noexcept {
+void Cats::dump() const noexcept{
     /// assert( validate() ) ;
 
+    Mammal::dump();
+    FORMAT_LINE_FOR_DUMP( "Cat", "name" ) << getName() << std::endl ;
+/*
     cout << setw(80) << setfill( '=' ) << "" << endl ;
     cout << setfill( ' ' ) ;
     cout << left ;
@@ -202,9 +203,11 @@ bool Cats::print() const noexcept {
     FORMAT_LINE( "Cat", "weight" )       << getWeight() << endl ;
 
     return true ;
+
+    */
 }
 
-const string Cats::speak() {
-    return string( "Meow" );
+ std::string Cats::speak() const noexcept {
+    return std::string( "Meow" );
 }
 

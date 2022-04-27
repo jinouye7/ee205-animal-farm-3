@@ -8,6 +8,7 @@
 /// @author Jared Inouye <jinouye7@hawaii.edu>
 /// @date   19_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
 #include <iostream>
 #include <string>
 #include "config.h"
